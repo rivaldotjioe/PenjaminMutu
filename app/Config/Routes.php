@@ -34,7 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/mitra', 'Mitra::index');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index');
-
+$routes->post('/mitra/save', 'Mitra::save');
+$routes->get('/test', 'TestClass::test');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -36,6 +36,7 @@ $routes->get('/mitra', 'Mitra::index');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index');
 $routes->post('/mitra/save', 'Mitra::save');
 $routes->get('/test', 'TestClass::test');
+$routes->get('/mitra/info', 'Mitra::info');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

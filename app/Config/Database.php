@@ -32,12 +32,12 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $default = [
-		'DSN'      => '',
-		'hostname' => '127.0.0.1:50591',
+		'DSN'      => 'pgsql:host=localhost;port=5433;dbname=DBPenjaminMutu;user=postgres;password=admin',
+		'hostname' => 'localhost',
 		'username' => 'postgres',
-		'password' => 'aldo',
+		'password' => 'admin',
 		'database' => 'DBPenjaminMutu',
-		'DBDriver' => 'postgre',
+		'DBDriver' => 'pdo',
 		'DBPrefix' => '',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -50,7 +50,7 @@ class Database extends \CodeIgniter\Database\Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 5432,
+		'port'     => 5433,
 	];
 
 	/**

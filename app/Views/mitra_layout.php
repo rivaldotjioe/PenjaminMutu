@@ -56,10 +56,10 @@
                         <div class="input-field col s4">
                           <select name="tingkat">
                             <option value="" disabled selected>Pilih Tingkat</option>
-                            <option value="1">Kota</option>
-                            <option value="2">Provinsi</option>
-                            <option value="3">Nasional</option>
-                            <option value="4">Internasional</option>
+                            <option value="Kota">Kota</option>
+                            <option value="Provinsi">Provinsi</option>
+                            <option value="Nasional">Nasional</option>
+                            <option value="Internasional">Internasional</option>
                           </select>
                           <label>Tingkat</label>
                         </div>
@@ -103,7 +103,7 @@
                           <div class="file-field input-field">
                             <div class="btn">
                               <span>Bukti Kerjasama</span>
-                              <input type="file" multiple>
+                              <input type="file" multiple name="buktimitra" >
                             </div>
                             <div class="file-path-wrapper">
                               <input class="file-path validate" type="text" placeholder="Upload satu atau lebih bukti kerjasama" name="bukti_kerjasama">

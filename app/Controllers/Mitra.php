@@ -4,32 +4,44 @@ namespace App\Controllers;
 
 use App\Models\LembagaMitraModel;
 use App\Models\KegiatanKerjasamaModel;
+use App\Models\TingkatModel;
 
 class Mitra extends BaseController
 {
     protected $lembagaMitraModel;
     protected $kegiatanKerjasama;
+    protected $tingkatModel;
 
     public function __construct()
     {
         $this->lembagaMitraModel = new LembagaMitraModel();
         $this->kegiatanKerjasama = new KegiatanKerjasamaModel();
+        $this->tingkatModel = new TingkatModel();
     }
 
     public function index()
     {
-        return view('mitra_layout');
+        return view('/default/mitra');
     }
 
     public function test()
     {
         $db = \Config\Database::connect();
-        $data = $db->query("insert into lembagamitra (nama_lembaga,deleted) values ('cobacoba',false)");
+        $data = $db->query("insert into lembagamitra (id_lembagamitra,nama_lembaga) values (nextval('increment_default'),'Tokopedia')");
         dd($data);
+    }
+
+    public function insertlembagatest()
+    {
+        $this->lembagaMitraModel->save([
+            'nama_lembaga' => "Dicoding"
+        ]);
     }
 
     public function inserttest()
     {
+
+
         $this->kegiatanKerjasama->save([
             'id_lembagamitra' => 1,
             'nama_kegiatan' => 'gk eroh jenenge',
@@ -38,8 +50,7 @@ class Mitra extends BaseController
             'durasi_kerjasama' => 2,
             'bukti_kerjasama' => 'File e embo nang endi',
             'tahun_berakhir' => '2019',
-            'tahun_kerjasama' => '2022',
-            'deleted' => false
+            'tahun_kerjasama' => '2022'
         ]);
     }
 
@@ -68,7 +79,5 @@ class Mitra extends BaseController
             'tahun_kerjasama' => $this->request->getVar('tahun'),
             'deleted' => false
         ]);
-
-        
     }
 }

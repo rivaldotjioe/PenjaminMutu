@@ -8,6 +8,7 @@ class LembagaMitraModel extends Model
 {
     protected $table = 'lembagamitra';
     protected $primaryKey = 'id_lembagamitra';
-    protected $useTimestamps = false;
-    protected $allowedFields = ['nama_lembaga', 'deleted'];
+    protected $useTimestamps = true;
+    protected $useSoftDeletes = true;
+    protected $allowedFields = ['nama_lembaga'];
 }

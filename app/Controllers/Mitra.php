@@ -5,23 +5,42 @@ namespace App\Controllers;
 use App\Models\LembagaMitraModel;
 use App\Models\KegiatanKerjasamaModel;
 use App\Models\TingkatModel;
+use App\Models\MasterTahunModel;
 
 class Mitra extends BaseController
 {
     protected $lembagaMitraModel;
     protected $kegiatanKerjasama;
     protected $tingkatModel;
+    protected $masterTahunModel;
 
     public function __construct()
     {
         $this->lembagaMitraModel = new LembagaMitraModel();
         $this->kegiatanKerjasama = new KegiatanKerjasamaModel();
         $this->tingkatModel = new TingkatModel();
+        $this->masterTahunModel = new MasterTahunModel();
     }
 
     public function index()
     {
-        return view('/default/mitra');
+        $lembaga = $this->lembagaMitraModel->findAll();
+        $tingkat = $this->tingkatModel->findAll();
+        $tahun = $this->masterTahunModel->findAll();
+        $data = [
+            'lembagamitra' => $lembaga,
+            'tingkat' => $tingkat,
+            'tahun' => $tahun
+        ];
+        return view('/default/mitra', $data);
+    }
+
+
+
+    public function readtest()
+    {
+        $lembaga = $this->lembagaMitraModel->findAll();
+        dd($lembaga);
     }
 
     public function test()
@@ -33,7 +52,7 @@ class Mitra extends BaseController
 
     public function insertlembagatest()
     {
-        $this->lembagaMitraModel->save([
+        $insert = $this->lembagaMitraModel->save([
             'nama_lembaga' => "Dicoding"
         ]);
     }
@@ -59,12 +78,24 @@ class Mitra extends BaseController
         phpinfo();
     }
 
+    public function saveLembaga()
+    {
+        $insert = $this->lembagaMitraModel->save([
+            'nama_lembaga' => $this->request->getVar('tambah_namamitra')
+        ]);
+        echo $insert;
+        if ($insert) {
+            session()->setFlashdata('success', 'Lembaga Berhasil Ditambahkan');
+            return redirect()->to('/mitra');
+        } else {
+            echo $this->session->flashdata('error', 'Lembaga Gagal Ditambahakn');
+            return redirect()->to('/mitra');
+        }
+    }
+
     public function save()
     {
-        $this->lembagaMitraModel->save([
-            'nama_lembaga' => $this->request->getVar('nama_lembaga'),
-            'deleted' => false
-        ]);
+
 
         $resultlembagamitra = $this->lembagaMitraModel->where('nama_lembaga', $this->request->getVar('nama_lembaga'))->first();
         $durasi = (int)$this->request->getVar('tahun_berakhir') - (int)$this->request->getVar('tahun');

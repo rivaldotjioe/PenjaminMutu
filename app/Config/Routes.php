@@ -38,6 +38,8 @@ $routes->post('/mitra/save', 'Mitra::save');
 $routes->get('/testinput', 'Mitra::inserttest');
 $routes->get('/mitra/inputlembagatest', 'Mitra::insertlembagatest');
 $routes->get('/mitra/info', 'Mitra::info');
+$routes->get('/mitra/readtest', 'Mitra::readtest');
+$routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

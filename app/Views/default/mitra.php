@@ -38,36 +38,38 @@
 <body>
 	<!-- modal tambah lembaga mitra-->
 	<div id="modal-tambah-mitra" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title">Tambah Lembaga Mitra</h4>
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label for="field-1" class="control-label">Nama Lembaga Mitra</label>
-								<input type="text" class="form-control" id="tambah_namamitra" name="tambah_namamitra" placeholder="Nama Lembaga Mitra">
+		<form action="/mitra/savelembaga" method="post">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title">Tambah Lembaga Mitra</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="field-1" class="control-label">Nama Lembaga Mitra</label>
+									<input type="text" class="form-control" id="tambah_namamitra" name="tambah_namamitra" placeholder="Nama Lembaga Mitra" autofocus>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group no-margin">
+									<label for="field-7" class="control-label">Keterangan</label>
+									<textarea class="form-control" id="tambah_ketmitra" name="tambah_ketmitra" placeholder="Tulis Keterangan"></textarea>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group no-margin">
-								<label for="field-7" class="control-label">Keterangan</label>
-								<textarea class="form-control" id="tambah_ketmitra" name="tambah_ketmitra" placeholder="Tulis Keterangan"></textarea>
-							</div>
-						</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">TUTUP</button>
+						<button type="submit" name="simpan_modal" class="btn btn-info waves-effect waves-light">SIMPAN</button>
 					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">TUTUP</button>
-					<button type="button" name="simpan_modal" class="btn btn-info waves-effect waves-light">SIMPAN</button>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 
 
@@ -83,6 +85,15 @@
 				<div class="col-12">
 					<div class="card-box">
 						<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
+						<?php if (session()->getFlashData('success')) : ?>
+							<div class="alert alert-success" role="alert">
+								<?= session()->getFlashData('success'); ?>
+							</div>
+						<?php elseif (session()->getFlashData('error')) : ?>
+							<div class="alert alert-danger" role="alert">
+								<?= session()->getFlashData('error'); ?>
+							</div>
+						<?php endif; ?>
 						<div class="row">
 							<div class="col-12">
 								<div class="p-20">
@@ -92,10 +103,10 @@
 											<div class="col-7">
 												<select class="form-control select2" name="lembagamitra">
 													<option value="" disabled selected>Pilih Lembaga Mitra</option>
-													<option value="Data Science Indonesia">Data Science Indonesia</option>
-													<option value="Dicoding">Dicoding</option>
-													<option value="DiLo">DiLo</option>
-													<option value="Relawan TIK">Relawan TIK :v</option>
+													<?php foreach ($lembagamitra as $mitra) : ?>
+														<option value="<?= $mitra['id_lembagamitra']; ?>"><?= $mitra['nama_lembaga']; ?></option>
+													<?php endforeach; ?>
+
 													</optgroup>
 												</select>
 											</div>
@@ -113,8 +124,9 @@
 											<div class="col-10">
 												<select class="form-control select2" name="tingkat">
 													<option value="" disabled selected>Pilih Tingkat</option>
-													<option value="Internsaional">Internasional</option>
-													<option value="Nasional">Nasional</option>
+													<?php foreach ($tingkat as $t) : ?>
+														<option value="<?= $t['id_tingkat'] ?>"><?= $t['keterangan']; ?></option>
+													<?php endforeach; ?>
 												</select>
 											</div>
 										</div>
@@ -125,7 +137,9 @@
 											<div class="col-4">
 												<select class="form-control select2" name="tahunmulai">
 													<option value="" disabled selected>Pilih Tahun Kerjasama</option>
-													<option value="2019">2019</option>
+													<?php foreach ($tahun as $thn) : ?>
+														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
+													<?php endforeach; ?>
 													<option value="2020">2020</option>
 												</select>
 											</div>
@@ -134,7 +148,9 @@
 											<div class="col-4">
 												<select class="form-control select2" name="tahunberakhir">
 													<option value="" disabled selected>Pilih Tahun Kerjasama Berakhir</option>
-													<option value="2019">2019</option>
+													<?php foreach ($tahun as $thn) : ?>
+														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
+													<?php endforeach; ?>
 													<option value="2020">2020</option>
 												</select>
 											</div>

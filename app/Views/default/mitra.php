@@ -83,21 +83,23 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<div class="card-box">
-						<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
-						<?php if (session()->getFlashData('success')) : ?>
-							<div class="alert alert-success" role="alert">
-								<?= session()->getFlashData('success'); ?>
-							</div>
-						<?php elseif (session()->getFlashData('error')) : ?>
-							<div class="alert alert-danger" role="alert">
-								<?= session()->getFlashData('error'); ?>
-							</div>
-						<?php endif; ?>
-						<div class="row">
-							<div class="col-12">
-								<div class="p-20">
-									<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" action="mitra/save" method="post" enctype="multipart/form-data">
+						<div class="card-box">
+							<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
+							<?php if (session()->getFlashData('success')) : ?>
+								<div class="alert alert-success" role="alert">
+									<?= session()->getFlashData('success'); ?>
+								</div>
+							<?php elseif (session()->getFlashData('error')) : ?>
+								<div class="alert alert-danger" role="alert">
+									<?= session()->getFlashData('error'); ?>
+								</div>
+							<?php endif; ?>
+							<div class="row">
+								<div class="col-12">
+									<div class="p-20">
+
+										<?= csrf_field(); ?>
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Lembaga Mitra</label>
 											<div class="col-7">
@@ -170,17 +172,18 @@
 												<input type="file" name="buktikerjasama" class="filestyle" data-buttonname="btn-primary" multiple>
 											</div>
 										</div>
-									</form>
+
+									</div>
+								</div>
+								<div align="right" class="input-field col s11">
+									<button type="submit" name="submit" class="btn-lg btn-primary waves-effect w-md waves-light" id="sa-warning"> SUBMIT</button>
 								</div>
 							</div>
-							<div align="right" class="input-field col s11">
-								<button type="submit" name="submit" class="btn-lg btn-primary waves-effect w-md waves-light" id="sa-warning"> SUBMIT</button>
-							</div>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 

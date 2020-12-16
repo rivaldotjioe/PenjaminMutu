@@ -10,5 +10,14 @@ class KegiatanKerjasamaModel extends Model
     protected $primaryKey = 'id_kegiatankerjasama';
     protected $useTimestamps = true;
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['id_lembagamitra', 'nama_kegiatan', 'tingkat', 'manfaat_kerjasama', 'durasi_kerjasama', 'bukti_kerjasama', 'tahun_kerjasama', 'tahun_berakhir', 'deleted'];
+    protected $allowedFields = ['id_lembagamitra',
+                                'id_fakultas',
+                                'nama_kegiatan',
+                                'tingkat',
+                                'manfaat_kerjasama', 
+                                'durasi_kerjasama', 
+                                'bukti_kerjasama', 
+                                'tahun_kerjasama', 
+                                'tahun_berakhir'
+                                ];
 }

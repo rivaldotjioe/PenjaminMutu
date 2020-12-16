@@ -35,6 +35,15 @@ class Mitra extends BaseController
         return view('/default/mitra', $data);
     }
 
+    public function datakerjasama()
+    {
+        $datakerjasamamitra = $this->kegiatanKerjasama->findAll();
+        $data = [
+            'kerjasamamitra' => $datakerjasamamitra
+        ];
+        return view('/default/datamitra', $data);
+    }
+
 
 
     public function readtest()
@@ -83,32 +92,41 @@ class Mitra extends BaseController
         $insert = $this->lembagaMitraModel->save([
             'nama_lembaga' => $this->request->getVar('tambah_namamitra')
         ]);
-        echo $insert;
+
         if ($insert) {
             session()->setFlashdata('success', 'Lembaga Berhasil Ditambahkan');
             return redirect()->to('/mitra');
         } else {
-            echo $this->session->flashdata('error', 'Lembaga Gagal Ditambahakn');
+            echo $this->session->flashdata('error', 'Lembaga Gagal Ditambahakan');
             return redirect()->to('/mitra');
         }
     }
 
     public function save()
     {
+        // $resultlembagamitra = $this->lembagaMitraModel->where('nama_lembaga', $this->request->getVar('nama_lembaga'))->first();
+        $durasi = (int)$this->request->getVar('tahunberakhir') - (int)$this->request->getVar('tahunmulai');
+        $file = $this->request->getFile('buktikerjasama');
+        $bukti = $file->getRandomName();
+        $file->move('bukti', $bukti);
 
-
-        $resultlembagamitra = $this->lembagaMitraModel->where('nama_lembaga', $this->request->getVar('nama_lembaga'))->first();
-        $durasi = (int)$this->request->getVar('tahun_berakhir') - (int)$this->request->getVar('tahun');
-
-        $this->kegiatanKerjasama->save([
-            'id_lembagamitra' => $resultlembagamitra['id_lembagamitra'],
-            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
+        $insert =  $this->kegiatanKerjasama->save([
+            'id_lembagamitra' => $this->request->getVar('lembagamitra'),
+            'nama_kegiatan' => $this->request->getVar('namakegiatan'),
             'tingkat' => $this->request->getVar('tingkat'),
-            'manfaat_kerjasama' => $this->request->getVar('manfaat_kerjasama'),
+            'manfaat_kerjasama' => $this->request->getVar('manfaat'),
             'durasi_kerjasama' => $durasi,
-            'tahun_berakhir' => $this->request->getVar('tahun_berakhir'),
-            'tahun_kerjasama' => $this->request->getVar('tahun'),
-            'deleted' => false
+            'tahun_berakhir' => $this->request->getVar('tahunberakhir'),
+            'tahun_kerjasama' => $this->request->getVar('tahunmulai'),
+            'bukti_kerjasama' => $bukti
         ]);
+        if ($insert) {
+            session()->setFlashdata('success', 'Data Kerjasama Mitra Berhasil Ditambahkan');
+            return redirect()->to('/mitra');
+            unset($_POST);
+        } else {
+            echo $this->session->flashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');
+            return redirect()->to('/mitra');
+        }
     }
 }

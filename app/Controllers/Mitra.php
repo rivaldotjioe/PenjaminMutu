@@ -44,8 +44,6 @@ class Mitra extends BaseController
         return view('/default/datamitra', $data);
     }
 
-
-
     public function readtest()
     {
         $lembaga = $this->lembagaMitraModel->findAll();

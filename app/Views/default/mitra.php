@@ -126,9 +126,11 @@
 											<div class="col-10">
 												<select class="form-control select2" name="tingkat">
 													<option value="" disabled selected>Pilih Tingkat</option>
-													<?php foreach ($tingkat as $t) : ?>
-														<option value="<?= $t['id_tingkat'] ?>"><?= $t['keterangan']; ?></option>
-													<?php endforeach; ?>
+													<option value="Kota">Kota</option>
+													<option value="Provinsi">Provinsi</option>
+													<option value="Nasional">Nasional</option>
+													<option value="Internasional">Internasional</option>
+
 												</select>
 											</div>
 										</div>

@@ -37,7 +37,7 @@ class Mitra extends BaseController
 
     public function datakerjasama()
     {
-        $datakerjasamamitra = $this->kegiatanKerjasama->findAll();
+        $datakerjasamamitra = $this->kegiatanKerjasama->getData();
         $data = [
             'kerjasamamitra' => $datakerjasamamitra
         ];

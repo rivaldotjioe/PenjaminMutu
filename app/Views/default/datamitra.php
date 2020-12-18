@@ -50,13 +50,13 @@
                     <tbody>
                         <?php foreach ($kerjasamamitra as $k) : ?>
                             <tr>
-                                <td>Data Science Indonesia</td>
-                                <td>Workshop with Google Cloud</td>
-                                <td>Nasional</td>
-                                <td>2019</td>
-                                <td>1</td>
-                                <td>Unnotice</td>
-                                <td>Sertifikat.pdf</td>
+                                <td><?= $k['nama_lembaga']; ?></td>
+                                <td><?= $k['nama_kegiatan']; ?></td>
+                                <td><?= $k['tingkat']; ?></td>
+                                <td><?= $k['tahun_kerjasama']; ?></td>
+                                <td><?= $k['durasi_kerjasama']; ?></td>
+                                <td><?= $k['manfaat_kerjasama']; ?></td>
+                                <td><img src="\bukti\<?= $k['bukti_kerjasama']; ?>" class="bukti_kerjasama"></td>
                             </tr>
 
                         <?php endforeach; ?>

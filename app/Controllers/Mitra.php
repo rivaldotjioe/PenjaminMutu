@@ -26,7 +26,7 @@ class Mitra extends BaseController
     {
         $lembaga = $this->lembagaMitraModel->findAll();
         $tingkat = $this->tingkatModel->findAll();
-        $tahun = $this->masterTahunModel->findAll();
+        $tahun = $this->masterTahunModel->getYear();
         $data = [
             'lembagamitra' => $lembaga,
             'tingkat' => $tingkat,
@@ -52,9 +52,8 @@ class Mitra extends BaseController
 
     public function test()
     {
-        $db = \Config\Database::connect();
-        $data = $db->query("insert into lembagamitra (id_lembagamitra,nama_lembaga) values (nextval('increment_default'),'Tokopedia')");
-        dd($data);
+        $tahun = $this->masterTahunModel->getYear();
+        dd($tahun);
     }
 
     public function insertlembagatest()

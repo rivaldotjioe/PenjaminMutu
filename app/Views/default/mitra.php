@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="Description" CONTENT="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages">
 	<meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
-	<title>Rekognisi Dosen</title>
+	<title>Kerjasama Mitra</title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<title>Adminox - Responsive Web App Kit</title>
@@ -144,7 +144,7 @@
 													<?php foreach ($tahun as $thn) : ?>
 														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
 													<?php endforeach; ?>
-													<option value="2020">2020</option>
+
 												</select>
 											</div>
 
@@ -155,7 +155,7 @@
 													<?php foreach ($tahun as $thn) : ?>
 														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
 													<?php endforeach; ?>
-													<option value="2020">2020</option>
+
 												</select>
 											</div>
 										</div>

@@ -7,6 +7,6 @@ class RekognisiDosen extends BaseController
 
     public function index()
     {
-        return view('rekognisi_layout');
+        return view('/default/rekognisi');
     }
 }

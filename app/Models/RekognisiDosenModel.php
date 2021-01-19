@@ -8,7 +8,8 @@ class RekognisiDosenModel extends Model
 {
     protected $table = 'rekognisi_dosen';
     protected $primaryKey = 'id_rekognisi';
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
+    protected $useSoftDeletes = true;
     protected $allowedFields = ['id', 'id_dosen', 'id_tahun', 'id_jenis', 'keterangan_recognisi'];
 
     public function getInsertedId()

@@ -43,21 +43,14 @@
 
         //Warning Message
         $('#sa-warning').click(function () {
-            swal({
-                title: 'Apakah Anda Yakin Untuk Menyimpan?',
-               
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#4fa7f3',
-                cancelButtonColor: '#d57171',
-                confirmButtonText: 'Ya, Simpan'
-            }).then(function () {
-                swal(
-                    'Data Tersimpan',
-                    'Data Anda Telah Tersimpan',
-                    'success'
-                )
-            })
+            swal(
+                {
+                    title: 'Konfirmasi',
+                    text: 'Data Disimpan',
+                    type: 'success',
+                    confirmButtonColor: '#4fa7f3'
+                }
+            )
         });
 
         //Parameter

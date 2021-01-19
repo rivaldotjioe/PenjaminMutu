@@ -83,7 +83,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<form class="form-horizontal" role="form" action="mitra/save" method="post" enctype="multipart/form-data">
+					<form class="form-horizontal" role="form" action="mitra/save" method="post" 	>
 						<div class="card-box">
 							<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
 							<?php if (session()->getFlashData('success')) : ?>

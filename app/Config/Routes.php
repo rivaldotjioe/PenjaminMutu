@@ -35,12 +35,16 @@ $routes->get('/', 'Home::index');
 $routes->get('/mitra', 'Mitra::index');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index');
 $routes->post('/mitra/save', 'Mitra::save');
-$routes->get('/mitra/test', 'Mitra::test');
-$routes->get('/mitra/info', 'Mitra::info');
+$routes->post('rekognisidosen/save', 'RekognisiDosen::save');
+
 $routes->get('/mitra/readtest', 'Mitra::readtest');
 $routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');
 $routes->get('/mitra/datakerjasama', 'Mitra::datakerjasama');
+//test routes
 $routes->get('/test', 'Test::index');
+$routes->get('/mitra/test', 'Mitra::test');
+$routes->get('/mitra/info', 'Mitra::info');
+$routes->get('/rekognisidosen/test', 'RekognisiDosen::test');
 
 /**
  * --------------------------------------------------------------------

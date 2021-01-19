@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 use App\Models\LembagaMitraModel;
 use App\Models\KegiatanKerjasamaModel;
-use App\Models\TingkatModel;
-use App\Models\MasterTahunModel;
+    use App\Models\TingkatModel;
+    use App\Models\MasterTahunModel;
 
 class Mitra extends BaseController
 {
@@ -105,7 +105,7 @@ class Mitra extends BaseController
         $durasi = (int)$this->request->getVar('tahunberakhir') - (int)$this->request->getVar('tahunmulai');
         $file = $this->request->getFile('buktikerjasama');
         $bukti = $file->getRandomName();
-        $file->move('bukti', $bukti);
+        $file->move('buktikerjasama', $bukti);
 
         $insert =  $this->kegiatanKerjasama->save([
             'id_lembagamitra' => $this->request->getVar('lembagamitra'),

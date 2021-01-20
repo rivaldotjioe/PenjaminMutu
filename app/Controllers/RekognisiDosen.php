@@ -35,6 +35,15 @@ class RekognisiDosen extends BaseController
         return view('/default/rekognisi', $data);
     }
 
+    public function datarekognisiDosen()
+    {
+        $datarekognisi = $this->rekognisiDosenModel->getData();
+        $data = [
+            'datarekognisi' => $datarekognisi
+        ];
+        return view('/default/datarekognisi', $data);
+    }
+
     public function test()
     {
         $insertJenis = $this->jenisRekognisiModel->save([
@@ -58,7 +67,7 @@ class RekognisiDosen extends BaseController
         $idjenisrekognisi = $this->jenisRekognisiModel->getInsertedId();
         $insertRekognisi = $this->rekognisiDosenModel->save([
             'id_dosen' => $this->request->getVar('id_dosen'),
-            'id_tingkat' => $this->request->getVar('id_tingkat'),
+            'id_tingkat' => $this->request->getVar('tingkat'),
             'id_tahun' => $this->request->getVar('id_tahun'),
             'id_jenis' => $idjenisrekognisi,
             'keterangan_recognisi' => $this->request->getVar('keterangan')

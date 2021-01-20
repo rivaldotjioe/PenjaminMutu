@@ -89,13 +89,10 @@
 											</div>
 										</div>
 
-
-
-
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Tingkat</label>
 											<div class="col-4">
-												<select class="form-control select2" name="id_tingkat">
+												<select class="form-control select2" name="tingkat">
 													<option value="" disabled selected>Pilih Tingkat</option>
 													<?php foreach ($tingkat as $t) : ?>
 														<option value="<?= $t['id_tingkat']; ?>"><?= $t['keterangan']; ?></option>

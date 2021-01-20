@@ -32,14 +32,15 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+//routesmitra
 $routes->get('/mitra', 'Mitra::index');
-$routes->get('/rekognisidosen', 'RekognisiDosen::index');
+$routes->get('/mitradata', 'Mitra::datakerjasama');
 $routes->post('/mitra/save', 'Mitra::save');
-$routes->post('rekognisidosen/save', 'RekognisiDosen::save');
 
+$routes->post('rekognisidosen/save', 'RekognisiDosen::save');
+$routes->get('/rekognisidosen', 'RekognisiDosen::index');
 $routes->get('/mitra/readtest', 'Mitra::readtest');
 $routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');
-$routes->get('/mitra/datakerjasama', 'Mitra::datakerjasama');
 //test routes
 $routes->get('/test', 'Test::index');
 $routes->get('/mitra/test', 'Mitra::test');

@@ -56,7 +56,7 @@
                                 <td><?= $k['tahun_kerjasama']; ?></td>
                                 <td><?= $k['durasi_kerjasama']; ?></td>
                                 <td><?= $k['manfaat_kerjasama']; ?></td>
-                                <td><a href="\bukti\<?= $k['bukti_kerjasama']; ?>"><?= $k['bukti_kerjasama']; ?></a></td>
+                                <td><a href="\buktikerjasama\<?= $k['bukti_kerjasama']; ?>"><?= $k['bukti_kerjasama']; ?></a></td>
                             </tr>
 
                         <?php endforeach; ?>

@@ -20,7 +20,10 @@ class RekognisiDosenModel extends Model
     public function getData()
     {
         return $this->db->table($this->table)
-            ->join('lembagamitra', 'lembagamitra.id_lembagamitra = kegiatan_kerjasama.id_lembagamitra')
+            ->join('jenis_recognisi', 'jenis_recognisi.id_jenis = rekognisi_dosen.id_jenis')
+            ->join('tingkat', 'tingkat.id_tingkat = rekognisi_dosen.id_tingkat')
+            ->join('master_tahun', 'master_tahun.id_tahun = rekognisi_dosen.id_tahun')
+            ->join('bukti_rekognisi', 'bukti_rekognisi.id_rekognisi = rekognisi_dosen.id_rekognisi')
             ->get()->getResultArray();
     }
 }

@@ -35,7 +35,7 @@ class RekognisiDosen extends BaseController
         return view('/default/rekognisi', $data);
     }
 
-    public function datarekognisiDosen()
+    public function dataRekognisiDosen()
     {
         $datarekognisi = $this->rekognisiDosenModel->getData();
         $data = [

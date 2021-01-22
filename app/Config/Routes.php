@@ -39,6 +39,7 @@ $routes->post('/mitra/save', 'Mitra::save');
 
 $routes->post('rekognisidosen/save', 'RekognisiDosen::save');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index');
+$routes->get('/rekognisidosendata', 'RekognisiDosen::dataRekognisiDosen');
 $routes->get('/mitra/readtest', 'Mitra::readtest');
 $routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');
 //test routes

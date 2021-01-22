@@ -30,7 +30,8 @@ class RekognisiDosen extends BaseController
         $tahun = $this->masterTahunModel->getYear();
         $data = [
             'tingkat' => $tingkat,
-            'tahun' => $tahun
+            'tahun' => $tahun,
+            'validation' => \Config\Services::validation()
         ];
         return view('/default/rekognisi', $data);
     }
@@ -54,8 +55,23 @@ class RekognisiDosen extends BaseController
         dd($idjenisrekognisi);
     }
 
+
     public function save()
     {
+        if (!$this->validate([
+            'id_dosen' => 'required',
+            'bidangkeahlian' => 'required',
+            'namarekognisi' => 'required',
+            'tingkat' => 'required',
+            'id_tahun' => 'required',
+            'keterangan' => 'required',
+            'buktirekognisi' => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+            // session()->setFlashdata('error', $validation['errors']);
+            return redirect()->to('/rekognisidosen')->withInput()->with('validation', $validation);
+        }
+
         $file = $this->request->getFile('buktirekognisi');
         $bukti = $file->getRandomName();
         $file->move('buktirekognisi', $bukti);
@@ -83,7 +99,7 @@ class RekognisiDosen extends BaseController
             return redirect()->to('/rekognisidosen');
             unset($_POST);
         } else {
-            echo $this->session->flashdata('error', 'Data Rekognisi Dosen Gagal Ditambahkan');
+            session()->setflashdata('error', 'Data Rekognisi Dosen Gagal Ditambahkan');
             return redirect()->to('/rekognisidosen');
         }
     }

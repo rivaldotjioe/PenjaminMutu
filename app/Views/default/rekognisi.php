@@ -68,53 +68,71 @@
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Dosen</label>
 											<div class="col-10">
-												<select class="form-control select2" name="id_dosen">
+												<select class="form-control select2 <?= ($validation->hasError('id_dosen')) ?  'is-invalid' : ''; ?>" name="id_dosen" value="<?= old('id_dosen'); ?>">
 													<option value="" disabled selected>Pilih Nama Dosen</option>
 													<option value="18082010026">Rivaldo Hadi Winata </option>
 													<option value="18082010035">Helmy Kurniawan</option>
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('id_dosen'); ?>
+												</div>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Bidang Keahlian</label>
 											<div class="col-10">
-												<input type="text" class="form-control" name="bidangkeahlian" placeholder="Bidang Keahlian">
+												<input type="text" class="form-control <?= ($validation->hasError('bidangkeahlian')) ?  'is-invalid' : ''; ?>" name="bidangkeahlian" placeholder="Bidang Keahlian" value="<?= old('bidangkeahlian'); ?>">
+												<div class="invalid-feedback">
+													<?= $validation->getError('bidangkeahlian'); ?>
+												</div>
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Rekognisi</label>
 											<div class="col-10">
-												<input type="text" class="form-control" name="namarekognisi" placeholder="Nama Rekognisi">
+												<input type="text" class="form-control <?= ($validation->hasError('namarekognisi')) ?  'is-invalid' : ''; ?>" name="namarekognisi" placeholder="Nama Rekognisi" value="<?= old('namarekognisi'); ?>">
+												<div class="invalid-feedback">
+													<?= $validation->getError('namarekognisi'); ?>
+												</div>
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Tingkat</label>
 											<div class="col-4">
-												<select class="form-control select2" name="tingkat">
+												<select class="form-control select2 <?= ($validation->hasError('tingkat')) ?  'is-invalid' : ''; ?>" name="tingkat" value="<?= old('tingkat'); ?>">
 													<option value="" disabled selected>Pilih Tingkat</option>
 													<?php foreach ($tingkat as $t) : ?>
 														<option value="<?= $t['id_tingkat']; ?>"><?= $t['keterangan']; ?></option>
 													<?php endforeach; ?>
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('tingkat'); ?>
+												</div>
 											</div>
 
 											<label class="col-2 col-form-label">Tahun </label>
 											<div class="col-4">
-												<select class="form-control select2" name="id_tahun">
+												<select class="form-control select2 <?= ($validation->hasError('id_tahun')) ?  'is-invalid' : ''; ?>" name="id_tahun" value="<?= old('id_tahun'); ?>">
 													<option value="" disabled selected>Pilih Tahun</option>
 													<?php foreach ($tahun as $thn) : ?>
 														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
 													<?php endforeach; ?>
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('id_tahun'); ?>
+												</div>
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Keterangan Rekognisi</label>
 											<div class="col-10">
-												<textarea class="form-control" name="keterangan" rows="5"></textarea>
+												<textarea class="form-control <?= ($validation->hasError('keterangan')) ?  'is-invalid' : ''; ?>" name="keterangan" rows="5" value="<?= old('keterangan'); ?>"></textarea>
+												<div class="invalid-feedback">
+													<?= $validation->getError('keterangan'); ?>
+												</div>
 											</div>
 										</div>
 
@@ -122,7 +140,10 @@
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Bukti Rekognisi</label>
 											<div class="col-8">
-												<input type="file" name="buktirekognisi" class="filestyle" data-buttonname="btn-primary" multiple>
+												<input type="file" name="buktirekognisi" class="filestyle <?= ($validation->hasError('buktirekognisi')) ?  'is-invalid' : ''; ?>" data-buttonname="btn-primary" multiple>
+												<div class="invalid-feedback">
+													<?= $validation->getError('buktirekognisi'); ?>
+												</div>
 											</div>
 										</div>
 

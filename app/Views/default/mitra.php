@@ -83,7 +83,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
-					<form class="form-horizontal" role="form" action="mitra/save" method="post" 	>
+					<form class="form-horizontal" role="form" action="mitra/save" method="post">
 						<div class="card-box">
 							<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
 							<?php if (session()->getFlashData('success')) : ?>
@@ -111,20 +111,26 @@
 
 													</optgroup>
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('lembagamitra'); ?>
+												</div>
 											</div>
 											<button type="button" class="btn btn-custom waves-effect waves-light" data-toggle="modal" data-target="#modal-tambah-mitra">Tambah Lembaga Mitra</button>
 										</div>
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Kegiatan</label>
 											<div class="col-10">
-												<input type="text" class="form-control" name="namakegiatan" placeholder="Nama Kegiatan">
+												<input type="text" class="form-control <?= ($validation->hasError('namakegiatan')) ?  'is-invalid' : ''; ?>" name="namakegiatan" placeholder="Nama Kegiatan" value="<?= old('namakegiatan'); ?>">
+												<div class="invalid-feedback">
+													<?= $validation->getError('namakegiatan'); ?>
+												</div>
 											</div>
 										</div>
 
-										<div class="form-group row">
+										<div class=" form-group row">
 											<label class="col-2 col-form-label">Tingkat</label>
 											<div class="col-10">
-												<select class="form-control select2" name="tingkat">
+												<select class="form-control select2 <?= ($validation->hasError('tingkat')) ?  'is-invalid' : ''; ?>" name="tingkat">
 													<option value="" disabled selected>Pilih Tingkat</option>
 													<option value="Kota">Kota</option>
 													<option value="Provinsi">Provinsi</option>
@@ -132,6 +138,9 @@
 													<option value="Internasional">Internasional</option>
 
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('tingkat'); ?>
+												</div>
 											</div>
 										</div>
 
@@ -139,31 +148,38 @@
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Tahun Kerjasama</label>
 											<div class="col-4">
-												<select class="form-control select2" name="tahunmulai">
+												<select class="form-control select2 <?= ($validation->hasError('tahunmulai')) ?  'is-invalid' : ''; ?>" name="tahunmulai">
 													<option value="" disabled selected>Pilih Tahun Kerjasama</option>
 													<?php foreach ($tahun as $thn) : ?>
 														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
 													<?php endforeach; ?>
-
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('tahunmulai'); ?>
+												</div>
 											</div>
 
 											<label class="col-2 col-form-label">Tahun Berakhir </label>
 											<div class="col-4">
-												<select class="form-control select2" name="tahunberakhir">
+												<select class="form-control select2 <?= ($validation->hasError('tahunberakhir')) ?  'is-invalid' : ''; ?>" name="tahunberakhir">
 													<option value="" disabled selected>Pilih Tahun Kerjasama Berakhir</option>
 													<?php foreach ($tahun as $thn) : ?>
 														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
 													<?php endforeach; ?>
-
 												</select>
+												<div class="invalid-feedback">
+													<?= $validation->getError('tahunberakhir'); ?>
+												</div>
 											</div>
 										</div>
 
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Manfaat Kerjasama</label>
 											<div class="col-10">
-												<textarea class="form-control" name="manfaat" rows="5"></textarea>
+												<textarea class="form-control <?= ($validation->hasError('manfaat')) ?  'is-invalid' : ''; ?>" name="manfaat" rows="5"></textarea>
+												<div class="invalid-feedback">
+													<?= $validation->getError('menfaat'); ?>
+												</div>
 											</div>
 										</div>
 

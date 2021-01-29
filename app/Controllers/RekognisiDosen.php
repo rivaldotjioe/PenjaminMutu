@@ -97,7 +97,6 @@ class RekognisiDosen extends BaseController
         if ($insertJenis && $insertRekognisi && $inserBuktiRekognisi) {
             session()->setFlashdata('success', 'Data Rekognisi Dosen Berhasil Ditambahkan');
             return redirect()->to('/rekognisidosen');
-            unset($_POST);
         } else {
             session()->setflashdata('error', 'Data Rekognisi Dosen Gagal Ditambahkan');
             return redirect()->to('/rekognisidosen');

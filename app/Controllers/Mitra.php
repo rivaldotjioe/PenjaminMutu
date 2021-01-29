@@ -7,6 +7,7 @@ use App\Models\KegiatanKerjasamaModel;
 use App\Models\TingkatModel;
 use App\Models\MasterTahunModel;
 
+
 class Mitra extends BaseController
 {
     protected $lembagaMitraModel;
@@ -111,11 +112,14 @@ class Mitra extends BaseController
             'manfaat' => 'required'
         ])) {
             $validation = \Config\Services::validation();
-            return redirect()->to('/rekognisidosen')->withInput()->with('validation', $validation);
+            return redirect()->to('/mitra')->withInput()->with('validation', $validation);
         }
         // $resultlembagamitra = $this->lembagaMitraModel->where('nama_lembaga', $this->request->getVar('nama_lembaga'))->first();
         $durasi = (int)$this->request->getVar('tahunberakhir') - (int)$this->request->getVar('tahunmulai');
         $file = $this->request->getFile('buktikerjasama');
+        if (!$file->isvalid()) {
+            throw new \RuntimeException($file->getErrorString() . '(' . $file->getError() . ')');
+        }
         $bukti = $file->getRandomName();
         $file->move('buktikerjasama', $bukti);
 

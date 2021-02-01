@@ -112,6 +112,7 @@ class Mitra extends BaseController
             'manfaat' => 'required'
         ])) {
             $validation = \Config\Services::validation();
+            session()->setflashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');
             return redirect()->to('/mitra')->withInput()->with('validation', $validation);
         }
         // $resultlembagamitra = $this->lembagaMitraModel->where('nama_lembaga', $this->request->getVar('nama_lembaga'))->first();
@@ -138,7 +139,7 @@ class Mitra extends BaseController
             return redirect()->to('/mitra');
             unset($_POST);
         } else {
-            echo $this->session->flashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');
+            session()->setflashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');
             return redirect()->to('/mitra');
         }
     }

@@ -194,7 +194,7 @@
 									</div>
 								</div>
 								<div align="right" class="input-field col s11">
-									<button type="submit" name="submit" class="btn-lg btn-primary waves-effect w-md waves-light" id="sa-warning"> SUBMIT</button>
+									<button type="submit" name="submit" class="btn-lg btn-primary waves-effect w-md waves-light"> SUBMIT</button>
 								</div>
 							</div>
 					</form>

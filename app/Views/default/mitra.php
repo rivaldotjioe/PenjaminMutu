@@ -37,6 +37,9 @@
 
 <body>
 	<!-- modal tambah lembaga mitra-->
+    <div class="container">
+
+
 	<div id="modal-tambah-mitra" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 		<form action="/mitra/savelembaga" method="post">
 			<div class="modal-dialog">
@@ -203,6 +206,7 @@
 		</div>
 	</div>
 	</div>
+    </div>
 
 
 

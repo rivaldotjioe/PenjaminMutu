@@ -4,8 +4,24 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+        $session = session();
+        $loggedin = $session->get('logged_in');
+        if ($loggedin){
+            return view('dashboard');
+        } else {
+            return view('page-login');
+        }
+
 	}
+
+	public  function test(){
+	    return view ('dashboard');
+    }
+
+    public function login()
+    {
+	    return view ('page-login');
+    }
 
 	//--------------------------------------------------------------------
 

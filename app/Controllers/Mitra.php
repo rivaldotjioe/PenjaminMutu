@@ -34,7 +34,8 @@ class Mitra extends BaseController
             'tahun' => $tahun,
             'validation' => \Config\Services::validation()
         ];
-        return view('/default/mitra', $data);
+        echo view('dashboard');
+        echo view('/default/mitra', $data);
     }
 
     public function datakerjasama()
@@ -50,6 +51,7 @@ class Mitra extends BaseController
     {
         $lembaga = $this->lembagaMitraModel->findAll();
         dd($lembaga);
+
     }
 
     public function test()
@@ -67,8 +69,6 @@ class Mitra extends BaseController
 
     public function inserttest()
     {
-
-
         $this->kegiatanKerjasama->save([
             'id_lembagamitra' => 1,
             'nama_kegiatan' => 'gk eroh jenenge',
@@ -124,7 +124,7 @@ class Mitra extends BaseController
         $bukti = $file->getRandomName();
         $file->move('buktikerjasama', $bukti);
 
-        $insert =  $this->kegiatanKerjasama->save([
+        $insert = $this->kegiatanKerjasama->save([
             'id_lembagamitra' => $this->request->getVar('lembagamitra'),
             'nama_kegiatan' => $this->request->getVar('namakegiatan'),
             'tingkat' => $this->request->getVar('tingkat'),

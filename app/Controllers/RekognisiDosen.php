@@ -33,7 +33,10 @@ class RekognisiDosen extends BaseController
             'tahun' => $tahun,
             'validation' => \Config\Services::validation()
         ];
-        return view('/default/rekognisi', $data);
+        echo view('dashboard');
+        echo view('/default/rekognisi', $data);
+        
+
     }
 
     public function dataRekognisiDosen()

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta charset="utf-8" />
-        <title>Adminox - Responsive Web App Kit</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- App css -->
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="../assets/js/modernizr.min.js"></script>
+        <script src="assets/js/modernizr.min.js"></script>
 
     </head>
+
 
 
     <body>
@@ -117,7 +116,7 @@
                                 <a href="javascript: void(0);"><i class="fi-target"></i> <span> Kerja Sama Mitra </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/mitra">Form Kerjasama Mitra</a></li>
-                                    <li><a href="admin-sweet-alert.html">Data Kerjasama Mitra</a></li>
+                                    <li><a href="/datamitra">Data Kerjasama Mitra</a></li>
                                   
                                 </ul>
                             </li>
@@ -125,8 +124,8 @@
                             <li>
                                 <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Rekognisi Dosen </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="ui-typography.html">Form Rekognisi Dosen</a></li>
-                                    <li><a href="ui-cards.html">Data Rekognisi Dosen</a></li>
+                                    <li><a href="/rekognisidosen">Form Rekognisi Dosen</a></li>
+                                    <li><a href="/datarekognisi">Data Rekognisi Dosen</a></li>
                                 </ul>
                             </li>
 
@@ -144,26 +143,7 @@
 
 
 
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="content-page">
-                <!-- Start content -->
-                <div class="content">
-                    <div class="container-fluid">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title float-left">Starter Page</h4>
-
-                                    
-
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
+           
 
 
                     </div> <!-- container -->
@@ -186,18 +166,17 @@
         <!-- END wrapper -->
 
 
-
-        <!-- jQuery  -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-        <script src="../assets/js/bootstrap.min.js"></script>
-        <script src="../assets/js/metisMenu.min.js"></script>
-        <script src="../assets/js/waves.js"></script>
-        <script src="../assets/js/jquery.slimscroll.js"></script>
+<!-- jQuery  -->
+<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
 
         <!-- App js -->
-        <script src="../assets/js/jquery.core.js"></script>
-        <script src="../assets/js/jquery.app.js"></script>
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
 
     </body>
 </html>

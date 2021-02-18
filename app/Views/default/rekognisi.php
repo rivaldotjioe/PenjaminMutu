@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="Description" CONTENT="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages">
 	<meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
-	<title>Rekognisi Dosen</title>
+	<title>Kerjasama Mitra</title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<title>Adminox - Responsive Web App Kit</title>
@@ -27,19 +27,22 @@
 	<link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
 
 	<!-- App css -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
 
-	<script src="assets/js/modernizr.min.js"></script>
-
-
+	<script src="../assets/js/modernizr.min.js"></script>
 </head>
 
 <body>
+<!-- modal tambah lembaga mitra-->
 
-	<div class="content-page">
+<div class="container">
+<br>
+
+
+<div class="content-page">
 		<div class="content">
 			<div class="container-fluid">
 			</div>
@@ -49,6 +52,7 @@
 		<div class="col-12">
 			<div class="row">
 				<div class="col-12">
+				<form class="form-horizontal" action="rekognisidosen/save" method="post" role="form" enctype="multipart/form-data">
 					<div class="card-box">
 						<h4 class="m-t-0 header-title">Rekognisi Dosen</h4>
 						<?php if (session()->getFlashData('success')) : ?>
@@ -64,7 +68,7 @@
 							<div class="col-12">
 								<div class="p-20">
 									<?= csrf_field(); ?>
-									<form class="form-horizontal" action="rekognisidosen/save" method="post" role="form" enctype="multipart/form-data">
+									
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Dosen</label>
 											<div class="col-10">
@@ -127,7 +131,7 @@
 										</div>
 
 										<div class="form-group row">
-											<label class="col-2 col-form-label">Keterangan Rekognisi</label>
+											<label class="col-2 col-form-label">Keterangan </label>
 											<div class="col-10">
 												<textarea class="form-control <?= ($validation->hasError('keterangan')) ?  'is-invalid' : ''; ?>" name="keterangan" rows="5" value="<?= old('keterangan'); ?>"></textarea>
 												<div class="invalid-feedback">
@@ -159,18 +163,22 @@
 			</div>
 		</div>
 	</div>
+	</div>
 
 
 
 
+		<!-- jQuery  -->
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
 
-	<!-- jQuery  -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/metisMenu.min.js"></script>
-	<script src="assets/js/waves.js"></script>
-	<script src="assets/js/jquery.slimscroll.js"></script>
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
 
 	<script src="../plugins/switchery/switchery.min.js"></script>
 	<script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
@@ -183,17 +191,17 @@
 	<script type="text/javascript" src="../plugins/autocomplete/jquery.mockjax.js"></script>
 	<script type="text/javascript" src="../plugins/autocomplete/jquery.autocomplete.min.js"></script>
 	<script type="text/javascript" src="../plugins/autocomplete/countries.js"></script>
-	<script type="text/javascript" src="assets/pages/jquery.autocomplete.init.js"></script>
+	<script type="text/javascript" src="../assets/pages/jquery.autocomplete.init.js"></script>
 	<!-- Sweet-Alert  -->
 	<script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>
-	<script src="assets/pages/jquery.sweet-alert.init.js"></script>
+	<script src="../assets/pages/jquery.sweet-alert.init.js"></script>
 
 	<!-- Init Js file -->
 	<script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
 
 	<!-- App js -->
-	<script src="assets/js/jquery.core.js"></script>
-	<script src="assets/js/jquery.app.js"></script>
+	<script src="../assets/js/jquery.core.js"></script>
+	<script src="../assets/js/jquery.app.js"></script>
 
 </body>
 

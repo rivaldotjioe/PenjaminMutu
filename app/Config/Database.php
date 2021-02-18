@@ -31,13 +31,13 @@ class Database extends \CodeIgniter\Database\Config
 	 *
 	 * @var array
 	 */
-	public $default = [
-		'DSN'      => 'pgsql:host=localhost;port=5433;dbname=DBPenjaminMutu;user=postgres;password=admin',
+	 public $default = [
+		
 		'hostname' => 'localhost',
 		'username' => 'postgres',
-		'password' => 'admin',
+		'password' => 'davyjones23',
 		'database' => 'DBPenjaminMutu',
-		'DBDriver' => 'pdo',
+		'DBDriver' => 'Postgre',
 		'DBPrefix' => '',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -50,30 +50,10 @@ class Database extends \CodeIgniter\Database\Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 5433,
+		'port'     => 5432,
 	];
 
-    public $helper = [
-        'DSN'      => 'pgsql:host=localhost;port=5433;dbname=DBHelper;user=postgres;password=admin',
-        'hostname' => 'localhost',
-        'username' => 'postgres',
-        'password' => 'admin',
-        'database' => 'DBHelper',
-        'DBDriver' => 'pdo',
-        'DBPrefix' => '',
-        'pConnect' => false,
-        'DBDebug'  => (ENVIRONMENT !== 'production'),
-        'cacheOn'  => false,
-        'cacheDir' => '',
-        'charset'  => 'utf8',
-        'DBCollat' => 'utf8_general_ci',
-        'swapPre'  => '',
-        'encrypt'  => false,
-        'compress' => false,
-        'strictOn' => false,
-        'failover' => [],
-        'port'     => 5433,
-    ];
+   
 
 	/**
 	 * This database connection is used when

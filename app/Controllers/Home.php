@@ -2,6 +2,7 @@
 
 class Home extends BaseController
 {
+
 	public function index()
 	{
         $session = session();
@@ -14,8 +15,14 @@ class Home extends BaseController
 
 	}
 
-	public  function test(){
-	    return view ('dashboard');
+	public function testcurl(){
+	    $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://sandbox.rachmat.id/curl/");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        echo $output;
+
     }
 
     public function login()

@@ -44,7 +44,7 @@ $RECYCLE.BIN/
 .env
 .vagrant
 Vagrantfile
-app\Config\Database.php
+app/Config/Database.php
 
 #-------------------------
 # Temporary Files
@@ -126,3 +126,4 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+app/Config/Database.php

@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use ArrayIterator;
 use function Composer\Autoload\includeFile;
 
 use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
@@ -7,15 +8,13 @@ use GScholarProfileParser\Iterator\PublicationYearFilterIterator;
 use GScholarProfileParser\Parser\PublicationParser;
 use GScholarProfileParser\Entity\Publication;
 use Goutte\Client;
+
 class Home extends BaseController
 {
 
-
-	public function index()
+    public function index()
 	{
-        $session = session();
-        $loggedin = $session->get('logged_in');
-        if ($loggedin){
+        if (checkLogin()){
             return view('dashboard');
         } else {
             return view('page-login');
@@ -93,13 +92,27 @@ class Home extends BaseController
         $latestPublication = $publications[0];
 
 // displays latest publication data
-        echo $latestPublication->getTitle(), "<br>";
-        echo $latestPublication->getPublicationURL(), "<br>";
-        echo $latestPublication->getAuthors(), "<br>";
-        echo $latestPublication->getPublisherDetails(), "<br>";
-        echo $latestPublication->getNbCitations(), "<br>";
-        echo $latestPublication->getCitationsURL(), "<br>";
-        echo $latestPublication->getYear(), "<br>";
+//        echo $latestPublication->getTitle(), "<br>";
+//        echo $latestPublication->getPublicationURL(), "<br>";
+//        echo $latestPublication->getAuthors(), "<br>";
+//        echo $latestPublication->getPublisherDetails(), "<br>";
+//        echo $latestPublication->getNbCitations(), "<br>";
+//        echo $latestPublication->getCitationsURL(), "<br>";
+//        echo $latestPublication->getYear(), "<br>";
+
+        $publications2018 = new PublicationYearFilterIterator(new ArrayIterator($publications), 2016);
+
+// displays list of publications published in 2018
+        /** @var Publication $publication */
+        foreach ($publications2018 as $publication) {
+            echo $publication->getTitle(), "<br>";
+            echo $publication->getPublicationURL(), "<br>";
+            echo $publication->getAuthors(), "<br>";
+            echo $publication->getPublisherDetails(), "<br>";
+            echo $publication->getNbCitations(), "<br>";
+            echo $publication->getCitationsURL(), "<br>";
+            echo $publication->getYear(), "<br>";
+        }
 
     }
 

@@ -18,6 +18,11 @@ class RekognisiDosen extends BaseController
 
     public function __construct()
     {
+        helper(['my_helper']);
+        if (checkLogin()){
+        } else {
+            redirect()->to('/login');
+        }
         $this->tingkatModel = new TingkatModel();
         $this->masterTahunModel = new MasterTahunModel();
         $this->rekognisiDosenModel = new RekognisiDosenModel();
@@ -45,7 +50,8 @@ class RekognisiDosen extends BaseController
         $data = [
             'datarekognisi' => $datarekognisi
         ];
-        return view('/default/datarekognisi', $data);
+        echo view('dashboard');
+        echo view('/default/datarekognisi', $data);
     }
 
     public function test()

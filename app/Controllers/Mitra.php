@@ -7,7 +7,6 @@ use App\Models\KegiatanKerjasamaModel;
 use App\Models\TingkatModel;
 use App\Models\MasterTahunModel;
 
-
 class Mitra extends BaseController
 {
     protected $lembagaMitraModel;
@@ -17,10 +16,17 @@ class Mitra extends BaseController
 
     public function __construct()
     {
+        helper(['my_helper']);
+        if (checkLogin()){
+        } else {
+            redirect()->to('/login');
+        }
         $this->lembagaMitraModel = new LembagaMitraModel();
         $this->kegiatanKerjasama = new KegiatanKerjasamaModel();
         $this->tingkatModel = new TingkatModel();
         $this->masterTahunModel = new MasterTahunModel();
+
+
     }
 
     public function index()

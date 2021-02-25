@@ -40,13 +40,10 @@ $routes->get('/testgs', 'Home::testgs');
 $routes->get('/mitra', 'Mitra::index');
 $routes->get('/mitradata', 'Mitra::datakerjasama');
 $routes->post('/mitra/save', 'Mitra::save');
-
 $routes->post('rekognisidosen/save', 'RekognisiDosen::save');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index');
 $routes->get('/rekognisidosendata', 'RekognisiDosen::dataRekognisiDosen');
-$routes->get('/mitra/readtest', 'Mitra::readtest');
 $routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');
-$routes->get('/login', 'LoginController::index');
 $routes->post('/login', 'LoginController::login');
 $routes->get('/dashboard', 'Home::index');
 $routes->get('/logout', 'LoginController::logout');
@@ -54,6 +51,7 @@ $routes->get('/logout', 'LoginController::logout');
 //test routes
 $routes->get('/test', 'Home::test');
 $routes->get('/mitra/test', 'Mitra::test');
+$routes->get('/mitra/readtest', 'Mitra::readtest');
 $routes->get('/mitra/info', 'Mitra::info');
 $routes->get('/rekognisidosen/test', 'RekognisiDosen::test');
 

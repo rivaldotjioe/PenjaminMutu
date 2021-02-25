@@ -116,7 +116,7 @@
                                 <a href="javascript: void(0);"><i class="fi-target"></i> <span> Kerja Sama Mitra </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/mitra">Form Kerjasama Mitra</a></li>
-                                    <li><a href="/datamitra">Data Kerjasama Mitra</a></li>
+                                    <li><a href="/mitradata">Data Kerjasama Mitra</a></li>
                                   
                                 </ul>
                             </li>
@@ -125,7 +125,7 @@
                                 <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Rekognisi Dosen </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/rekognisidosen">Form Rekognisi Dosen</a></li>
-                                    <li><a href="/datarekognisi">Data Rekognisi Dosen</a></li>
+                                    <li><a href="/rekognisidosendata">Data Rekognisi Dosen</a></li>
                                 </ul>
                             </li>
 

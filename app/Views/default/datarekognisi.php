@@ -17,23 +17,34 @@
     <!-- Responsive datatable examples -->
     <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- App css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
-    <script src="assets/js/modernizr.min.js"></script>
 
 </head>
 
 
 <body>
+<div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-12">
-            <div class="card-box table-responsive">
-                <h4 class="m-t-0 header-title"><b>Data Rekognisi Dosen</b></h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">DATA REKOGNISI DOSEN</h4>
+
+                                
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box table-responsive">
+                <h4 class="m-t-0 header-title"><b>Rekognisi Dosen</b></h4>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
@@ -67,6 +78,7 @@
             </div>
         </div>
     </div>
+
     <!-- end row -->
 
 
@@ -83,13 +95,7 @@
 
 
 
-    <!-- jQuery  -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/metisMenu.min.js"></script>
-    <script src="assets/js/waves.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
+
 
     <!-- Required datatable js -->
     <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
@@ -107,9 +113,7 @@
     <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
     <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
 
-    <!-- App js -->
-    <script src="assets/js/jquery.core.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
+
 
     <script type="text/javascript">
         $(document).ready(function() {

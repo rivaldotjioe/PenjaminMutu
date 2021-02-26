@@ -14,6 +14,7 @@
 	<meta content="Coderthemes" name="author" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+
 	<!-- Sweet Alert -->
 	<link href="../plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
@@ -26,19 +27,29 @@
 	<link href="../plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
 
-	<!-- App css -->
-	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
-	<link href="../assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
 
-	<script src="../assets/js/modernizr.min.js"></script>
 </head>
 
 <body>
 
 	<!-- modal tambah lembaga mitra-->
-    <div class="container">
+	<div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">FORM KERJASAMA MITRA</h4>
+
+                                
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
 
 
 	<div id="modal-tambah-mitra" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -77,14 +88,7 @@
 	</div>
 
 
-	<div class="content-page">
-		<div class="content">
-			<div class="container-fluid">
-			</div>
-		</div>
-	</div>
-	<div class="container-alt">
-		<div class="col-12">
+	
 			<div class="row">
 				<div class="col-12">
 					<form class="form-horizontal" enctype="multipart/form-data" role="form" action="mitra/save" method="post">
@@ -212,18 +216,6 @@
 
 
 
-	<!-- jQuery  -->
-	<script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-
-        <!-- App js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
-
 	<script src="../plugins/switchery/switchery.min.js"></script>
 	<script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
 	<script src="../plugins/select2/js/select2.min.js" type="text/javascript"></script>
@@ -236,17 +228,11 @@
 	<script type="text/javascript" src="../plugins/autocomplete/jquery.autocomplete.min.js"></script>
 	<script type="text/javascript" src="../plugins/autocomplete/countries.js"></script>
 	<script type="text/javascript" src="../assets/pages/jquery.autocomplete.init.js"></script>
-	<!-- Sweet-Alert  -->
-	<script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>
-	<script src="../assets/pages/jquery.sweet-alert.init.js"></script>
+
 
 	<!-- Init Js file -->
-	<script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
-
-	<!-- App js -->
-	<script src="../assets/js/jquery.core.js"></script>
-	<script src="../assets/js/jquery.app.js"></script>
-
+	<script type="text/javascript" src="../assets/pages/jquery.form-advanced.init.js"></script>
+   
 </body>
 
 </html>

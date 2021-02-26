@@ -5,7 +5,6 @@
 * SweetAlert
 */
 
-
 !function ($) {
     "use strict";
 
@@ -22,7 +21,7 @@
 
         //A title with a text under
         $('#sa-title').click(function () {
-           swal(
+            swal(
                 'The Internet?',
                 'That thing is still around?',
                 'question'
@@ -43,33 +42,40 @@
 
         //Warning Message
         $('#sa-warning').click(function () {
-            swal(
-                {
-                    title: 'Konfirmasi',
-                    text: 'Data Disimpan',
-                    type: 'success',
-                    confirmButtonColor: '#4fa7f3'
-                }
-            )
+            swal({
+                title: 'Are you sure?',
+                text: "iyoooo?!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#4fa7f3',
+                cancelButtonColor: '#d57171',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function () {
+                swal(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            })
         });
 
         //Parameter
         $('#sa-params').click(function () {
-			swal({
-                title: 'Apakah Anda Yakin Untuk Menyimpan?',
-               
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
                 type: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Ya, Simpan',
-                cancelButtonText: 'Tidak, Batal',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
                 confirmButtonClass: 'btn btn-success',
                 cancelButtonClass: 'btn btn-danger m-l-10',
                 buttonsStyling: false
             }).then(function () {
                 swal(
-                    'Tersimpan!',
-                    'Data Anda Telah Tersimpan.',
-                    'Sukses'
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
                 )
             }, function (dismiss) {
                 // dismiss can be 'cancel', 'overlay',

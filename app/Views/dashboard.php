@@ -8,14 +8,13 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-
         <!-- App css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="../assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -48,7 +47,7 @@
 
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="false" aria-expanded="false">
+                               aria-haspopup="true" aria-expanded="false">
                                 <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
@@ -146,37 +145,31 @@
            
 
 
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
+              
 
                 <footer class="footer text-right">
                     2017 - 2018 © Adminox. - Coderthemes.com
                 </footer>
 
-            </div>
-
-
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
-
-
-        </div>
+           
         <!-- END wrapper -->
 
 
-<!-- jQuery  -->
-<script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
 
-        <!-- App js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+    <!-- jQuery  -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/waves.js"></script>
+    <script src="../assets/js/jquery.slimscroll.js"></script>
+
+
+
+    <!-- App js -->
+    <script src="../assets/js/jquery.core.js"></script>
+    <script src="../assets/js/jquery.app.js"></script>
+  
 
     </body>
 </html>

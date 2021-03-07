@@ -31,6 +31,11 @@ class RekognisiDosen extends BaseController
     }
     public function index()
     {
+        helper(['my_helper']);
+        if (checkLogin()){
+        } else {
+            redirect()->to('/login');
+        }
         $tingkat = $this->tingkatModel->findAll();
         $tahun = $this->masterTahunModel->getYear();
         $data = [

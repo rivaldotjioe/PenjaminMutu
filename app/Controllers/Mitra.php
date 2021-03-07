@@ -16,16 +16,17 @@ class Mitra extends BaseController
 
     public function __construct()
     {
-        helper(['my_helper']);
-        if (checkLogin()){
-        } else {
-            redirect()->to('/login');
-        }
+
+//        if ($loginstate){
+//
+//        }else {
+//            redirect()->to('/login');
+//
+//        }
         $this->lembagaMitraModel = new LembagaMitraModel();
         $this->kegiatanKerjasama = new KegiatanKerjasamaModel();
         $this->tingkatModel = new TingkatModel();
         $this->masterTahunModel = new MasterTahunModel();
-
 
     }
 

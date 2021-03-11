@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 
 $routes->get('/testcurl', 'Home::testcurl');
 $routes->get('/testgs', 'Home::testgs');
+$routes->get('/testgs2', 'Home::testgsstatistik');
 
 
 //routesmitra

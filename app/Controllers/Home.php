@@ -8,6 +8,8 @@ use GScholarProfileParser\Iterator\PublicationYearFilterIterator;
 use GScholarProfileParser\Parser\PublicationParser;
 use GScholarProfileParser\Entity\Publication;
 use Goutte\Client;
+use GScholarProfileParser\Entity\Statistics;
+use GScholarProfileParser\Parser\StatisticsParser;
 
 class Home extends BaseController
 {
@@ -64,7 +66,6 @@ class Home extends BaseController
          $html->load($response);
         foreach ($html->find('a[class=gs_ai_pho]') as $link){
                 $linkdosen =  $link->href; //link sitasi dosen
-
         }
         $response = null;
         $link = "https://scholar.google.com".$linkdosen;
@@ -73,6 +74,32 @@ class Home extends BaseController
         $htm->load($response);
         echo $htm;
 
+    }
+
+    public function testgsstatistik() {
+        $client = new Client();
+        $crawler = new ProfilePageCrawler($client,  $this->parseIdGs("https://scholar.google.com/citations?view_op=search_authors&mauthors=eka+dyar&hl=id&oi=ao"));
+        $parser = new StatisticsParser($crawler->getCrawler());
+        $statistics = new Statistics($parser->parse());
+        $nbCitationsPerYear = $statistics->getNbCitationsPerYear();
+        $sinceYear = $statistics->getSinceYear();
+
+        $nbCitationsSinceYear = 0;
+        foreach ($nbCitationsPerYear as $year => $nbCitations) {
+            if ($year >= $sinceYear) {
+                $nbCitationsSinceYear += $nbCitations;
+            }
+        }
+
+        echo sprintf("           All\t%4d\n", $sinceYear);
+        echo sprintf("Citations: %4d\t%4d\n", $statistics->getNbCitations(), $nbCitationsSinceYear);
+        echo sprintf("h-index  : %4d\t%4d\n", $statistics->getHIndex(), $statistics->getHIndexSince());
+        echo sprintf("i10-index: %4d\t%4d\n", $statistics->getI10Index(), $statistics->getI10IndexSince());
+        echo "\n";
+        echo implode("\t", array_keys($nbCitationsPerYear));
+        echo "\n";
+        echo implode("\t", array_values($nbCitationsPerYear));
+        echo "\n";
     }
 
     public function testgs(){
@@ -101,19 +128,31 @@ class Home extends BaseController
 //        echo $latestPublication->getYear(), "<br>";
 
         $publications2018 = new PublicationYearFilterIterator(new ArrayIterator($publications), 2016);
-
+        $publicationurl = null;
 // displays list of publications published in 2018
         /** @var Publication $publication */
         foreach ($publications2018 as $publication) {
             echo $publication->getTitle(), "<br>";
             echo $publication->getPublicationURL(), "<br>";
+            $publicationurl = $publication->getPublicationURL();
             echo $publication->getAuthors(), "<br>";
             echo $publication->getPublisherDetails(), "<br>";
             echo $publication->getNbCitations(), "<br>";
             echo $publication->getCitationsURL(), "<br>";
             echo $publication->getYear(), "<br>";
         }
-
+        $linksitasi = "";
+        $response = $this->curl($publicationurl);
+        $htm = new \simple_html_dom();
+        $htm->load($response);
+        foreach ($htm->find('a[class=gsc_vcd_g_a]') as $item) {
+           $linksitasi = $item->href;
+           break;
+        }
+        $responsesitasipublikasi = $this->curl($linksitasi);
+        $html = new \simple_html_dom();
+        $html->load($responsesitasipublikasi);
+        echo $html;
     }
 
     public function login()

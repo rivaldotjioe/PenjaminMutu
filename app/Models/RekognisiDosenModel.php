@@ -17,6 +17,7 @@ class RekognisiDosenModel extends Model
         $db = \Config\Database::connect();
         return $db->insertID();
     }
+
     public function getData()
     {
         return $this->db->table($this->table)

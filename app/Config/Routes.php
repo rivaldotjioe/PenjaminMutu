@@ -35,6 +35,8 @@ $routes->setAutoRoute(true);
 $routes->get('/testcurl', 'Home::testcurl');
 $routes->get('/testgs', 'Home::testgs');
 $routes->get('/testgs2', 'Home::testgsstatistik');
+$routes->get('/testgs3', 'GoogleScholar::getNbCitationDosen');
+$routes->get('/testsitasi', 'Home::testcitationdosen');
 
 
 //routesmitra
@@ -52,6 +54,7 @@ $routes->get('/dashboard', 'Home::index', ['filter' => 'auth']);
 $routes->get('/logout', 'LoginController::logout');
 
 //test routes
+$routes->get('/scholar', 'GoogleScholar::inputIdScholar');
 $routes->get('/test', 'Home::test');
 $routes->get('/mitra/test', 'Mitra::test');
 $routes->get('/mitra/readtest', 'Mitra::readtest');

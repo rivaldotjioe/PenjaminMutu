@@ -2,7 +2,6 @@
 
 use ArrayIterator;
 use function Composer\Autoload\includeFile;
-
 use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
 use GScholarProfileParser\Iterator\PublicationYearFilterIterator;
 use GScholarProfileParser\Parser\PublicationParser;
@@ -13,7 +12,6 @@ use GScholarProfileParser\Parser\StatisticsParser;
 
 class Home extends BaseController
 {
-
     public function index()
 	{
         if (checkLogin()){
@@ -21,7 +19,6 @@ class Home extends BaseController
         } else {
             return view('page-login');
         }
-
 	}
 
 	public function curl($url) {
@@ -76,6 +73,12 @@ class Home extends BaseController
 
     }
 
+    public function testcitationdosen(){
+        $url = "https://scholar.google.com/citations?view_op=search_authors&mauthors=eka+dyar&hl=id&oi=ao";
+        $idgs = $this->parseIdGs($url);
+
+    }
+
     public function testgsstatistik() {
         $client = new Client();
         $crawler = new ProfilePageCrawler($client,  $this->parseIdGs("https://scholar.google.com/citations?view_op=search_authors&mauthors=eka+dyar&hl=id&oi=ao"));
@@ -85,6 +88,7 @@ class Home extends BaseController
         $sinceYear = $statistics->getSinceYear();
 
         $nbCitationsSinceYear = 0;
+        dd($nbCitationsPerYear);
         foreach ($nbCitationsPerYear as $year => $nbCitations) {
             if ($year >= $sinceYear) {
                 $nbCitationsSinceYear += $nbCitations;
@@ -149,6 +153,7 @@ class Home extends BaseController
            $linksitasi = $item->href;
            break;
         }
+
         $responsesitasipublikasi = $this->curl($linksitasi);
         $html = new \simple_html_dom();
         $html->load($responsesitasipublikasi);

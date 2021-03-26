@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\MasterDosenModel;
 use App\Models\RekognisiDosenModel;
 use App\Models\TingkatModel;
 use App\Models\MasterTahunModel;
@@ -15,6 +16,7 @@ class RekognisiDosen extends BaseController
     protected $rekognisiDosenModel;
     protected $buktiRekognisiModel;
     protected $jenisRekognisiModel;
+    protected $masterDosenModel;
 
     public function __construct()
     {
@@ -28,6 +30,9 @@ class RekognisiDosen extends BaseController
         $this->rekognisiDosenModel = new RekognisiDosenModel();
         $this->buktiRekognisiModel = new BuktiRekognisiModel();
         $this->jenisRekognisiModel = new JenisRekognisiModel();
+        $this->masterDosenModel = new MasterDosenModel();
+
+
     }
     public function index()
     {
@@ -52,6 +57,11 @@ class RekognisiDosen extends BaseController
     public function dataRekognisiDosen()
     {
         $datarekognisi = $this->rekognisiDosenModel->getData();
+        //buat kolom baru untuk nama dosen ke array
+        for($i = 0; $i < count($datarekognisi); $i++) {
+            $dosenid = $this->masterDosenModel->getDosenName($datarekognisi[$i]['id_dosen']);
+            $datarekognisi[$i]['nama_dosen'] = $dosenid['nama_dosen'];
+        }
         $data = [
             'datarekognisi' => $datarekognisi
         ];

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Data Rekognisi Dosen</title>
+    <title>Data Google Scholar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title float-left">DATA REKOGNISI DOSEN</h4>
+                                    <h4 class="page-title float-left">DATA GOOGLE SCHOLAR</h4>
 
                                 
 
@@ -49,13 +49,12 @@
                 <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Nama Dosen</th>
-                            <th>Bidang Keahlian</th>
-                            <th>Nama Rekognisi</th>
-                            <th>Tingkat</th>
-                            <th>Tahun</th>
-                            <th>Keterangan</th>
-                            <th>Bukti Rekognisi</th>
+                            <th>Id Google Scholar</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                            
                         </tr>
                     </thead>
 
@@ -63,13 +62,12 @@
                     <tbody>
                         <?php foreach ($datarekognisi as $d) : ?>
                             <tr>
-                                <td><?= $d['nama_dosen']; ?></td>
-                                <td>Bidang Keahlian</td>
-                                <td><?= $d['nama_recognisi']; ?></td>
-                                <td><?= $d['keterangan']; ?></td>
-                                <td><?= $d['id_tahun']; ?></td>
-                                <td><?= $d['keterangan_recognisi']; ?></td>
-                                <td><a href="\buktirekognisi\<?= $d['bukti']; ?>"><?= $d['bukti']; ?></a></td>
+                                <td><?= $d['id_scholar']; ?></td>
+                                <td>B</td>
+                                <td><?= $d['ci']; ?></td>
+                                <td><?= $d['d']; ?></td>
+                                <td><?= $d['e']; ?></td>
+                             
                             </tr>
                         <?php endforeach; ?>
 

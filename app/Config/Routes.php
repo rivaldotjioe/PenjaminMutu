@@ -54,7 +54,8 @@ $routes->get('/dashboard', 'Home::index', ['filter' => 'auth']);
 $routes->get('/logout', 'LoginController::logout');
 
 //test routes
-$routes->get('/scholar', 'GoogleScholar::inputIdScholar');
+$routes->get('/inputidscholar', 'GoogleScholar::inputIdScholar');
+$routes->get('/scholar', 'GoogleScholar::dataScholar');
 $routes->get('/test', 'Home::test');
 $routes->get('/mitra/test', 'Mitra::test');
 $routes->get('/mitra/readtest', 'Mitra::readtest');

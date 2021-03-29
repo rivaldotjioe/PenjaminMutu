@@ -60,13 +60,12 @@
 
 
                     <tbody>
-                        <?php foreach ($datarekognisi as $d) : ?>
+                        <?php foreach ($datascholar as $d) : ?>
                             <tr>
-                                <td><?= $d['id_scholar']; ?></td>
-                                <td>B</td>
-                                <td><?= $d['ci']; ?></td>
-                                <td><?= $d['d']; ?></td>
-                                <td><?= $d['e']; ?></td>
+                                <td><?= $d['title']; ?></td>
+                                <td><?= $d['authors']; ?></td>
+                                <td><?= $d['publisherDetails']; ?></td>
+                                <td><?= $d['year']; ?></td>
                              
                             </tr>
                         <?php endforeach; ?>
@@ -94,22 +93,21 @@
 
 
 
-
     <!-- Required datatable js -->
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
     <!-- Buttons examples -->
-    <script src="../plugins/datatables/dataTables.buttons.min.js"></script>
-    <script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
-    <script src="../plugins/datatables/jszip.min.js"></script>
-    <script src="../plugins/datatables/pdfmake.min.js"></script>
-    <script src="../plugins/datatables/vfs_fonts.js"></script>
-    <script src="../plugins/datatables/buttons.html5.min.js"></script>
-    <script src="../plugins/datatables/buttons.print.min.js"></script>
-    <script src="../plugins/datatables/buttons.colVis.min.js"></script>
+    <script src="../plugins/datatables/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/buttons.bootstrap4.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/jszip.min.js" type="text/javascript"type="text/javascript"></script>
+    <script src="../plugins/datatables/pdfmake.min.js"type="text/javascript"></script>
+    <script src="../plugins/datatables/vfs_fonts.js"type="text/javascript"></script>
+    <script src="../plugins/datatables/buttons.html5.min.js"type="text/javascript"></script>
+    <script src="../plugins/datatables/buttons.print.min.js"type="text/javascript"></script>
+    <script src="../plugins/datatables/buttons.colVis.min.js"type="text/javascript"></script>
     <!-- Responsive examples -->
-    <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
-    <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/responsive.bootstrap4.min.js" type="text/javascript"></script>
 
 
 

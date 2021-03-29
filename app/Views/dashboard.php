@@ -127,7 +127,13 @@
                                     <li><a href="/rekognisidosendata">Data Rekognisi Dosen</a></li>
                                 </ul>
                             </li>
-
+                            <li>
+                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Google Scholar </span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="/inputidscholar">Form Id Google Scholar</a></li>
+                                    <li><a href="/scholar">Data Google Scholar</a></li>
+                                </ul>
+                            </li>
                         </ul>
 
                     </div>

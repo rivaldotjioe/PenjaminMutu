@@ -15,16 +15,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<!-- Sweet Alert -->
-	<link href="../plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+	<link href="/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
 
 
 	<!-- Plugins css-->
-	<link href="../plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-	<link href="../plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-	<link href="../plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-	<link href="../plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
+	<link href="/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+	<link href="/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/plugins/switchery/switchery.min.css">
 
 
 </head>
@@ -99,22 +99,22 @@
 
 
 
-	<script src="../plugins/switchery/switchery.min.js"></script>
-	<script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-	<script src="../plugins/select2/js/select2.min.js" type="text/javascript"></script>
-	<script src="../plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
-	<script src="../plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-	<script src="../plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
-	<script src="../plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+	<script src="/plugins/switchery/switchery.min.js"></script>
+	<script src="/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+	<script src="/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+	<script src="/plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
+	<script src="/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+	<script src="/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+	<script src="/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="../plugins/autocomplete/jquery.mockjax.js"></script>
-	<script type="text/javascript" src="../plugins/autocomplete/jquery.autocomplete.min.js"></script>
-	<script type="text/javascript" src="../plugins/autocomplete/countries.js"></script>
-	<script type="text/javascript" src="../assets/pages/jquery.autocomplete.init.js"></script>
+	<script type="text/javascript" src="/plugins/autocomplete/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+	<script type="text/javascript" src="/plugins/autocomplete/countries.js"></script>
+	<script type="text/javascript" src="/assets/pages/jquery.autocomplete.init.js"></script>
 
 
 	<!-- Init Js file -->
-	<script type="text/javascript" src="../assets/pages/jquery.form-advanced.init.js"></script>
+	<script type="text/javascript" src="/assets/pages/jquery.form-advanced.init.js"></script>
 
 
 

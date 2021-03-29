@@ -112,6 +112,8 @@ class Home extends BaseController
         $parser = new PublicationParser($crawler->getCrawler());
         $publications = $parser->parse();
 
+        dd($publications);
+
 // hydrates items of $publications into Publication
         foreach ($publications as &$publication) {
             /** @var Publication $publication */

@@ -8,7 +8,8 @@
 		"php": ">=7.2",
 		"codeigniter4/framework": "^4",
       "ext-curl": "*",
-		"bborrel/google-scholar-profile-parser": "^2.0"
+		"bborrel/google-scholar-profile-parser": "^2.0",
+		"shuchkin/simplexlsx": "^0.8.21"
     },
 	"require-dev": {
 		"fzaninotto/faker": "^1.9@dev",

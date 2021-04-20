@@ -1,5 +1,6 @@
 <?php namespace App\Controllers;
 
+use App\Models\MasterDosenModel;
 use ArrayIterator;
 use function Composer\Autoload\includeFile;
 use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
@@ -76,7 +77,7 @@ class Home extends BaseController
     public function testcitationdosen(){
         $url = "https://scholar.google.com/citations?view_op=search_authors&mauthors=eka+dyar&hl=id&oi=ao";
         $idgs = $this->parseIdGs($url);
-
+        dd($idgs);
     }
 
     public function testgsstatistik() {
@@ -160,6 +161,23 @@ class Home extends BaseController
         $html = new \simple_html_dom();
         $html->load($responsesitasipublikasi);
         echo $html;
+    }
+
+    public function testReadExcel(){
+        $masterdosen = new MasterDosenModel();
+        if (  $xlsx = \SimpleXLSX::parse('excel/Book1.xlsx')){
+//            dd($xlsx->rows());
+            $rows = $xlsx->rows();
+            for ($i = 0; $i<count($xlsx->rows()); $i++){
+                $data = [
+                    'id_dosen' => (string)$rows[$i][0],
+                    'idgs'=> $rows[$i][1]
+                ];
+                $masterdosen->save($data);
+            }
+        } else {
+            echo \SimpleXLSX::parseError();
+        }
     }
 
     public function login()

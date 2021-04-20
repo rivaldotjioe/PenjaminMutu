@@ -49,12 +49,10 @@
                 <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Id Google Scholar</th>
-                            <th>B</th>
-                            <th>C</th>
-                            <th>D</th>
-                            <th>E</th>
-                            
+                            <th>Judul Publikasi</th>
+                            <th>Author</th>
+                            <th>Jurnal</th>
+                            <th>Tahun</th>
                         </tr>
                     </thead>
 
@@ -66,7 +64,6 @@
                                 <td><?= $d['authors']; ?></td>
                                 <td><?= $d['publisherDetails']; ?></td>
                                 <td><?= $d['year']; ?></td>
-                             
                             </tr>
                         <?php endforeach; ?>
 

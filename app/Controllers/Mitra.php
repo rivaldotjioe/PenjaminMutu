@@ -117,7 +117,8 @@ class Mitra extends BaseController
             'tingkat' => 'required',
             'tahunmulai' => 'required',
             'tahunberakhir' => 'required',
-            'manfaat' => 'required'
+            'manfaat' => 'required',
+            'buktikerjasama' => 'uploaded[buktikerjasama]'
         ])) {
             $validation = \Config\Services::validation();
             session()->setflashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');

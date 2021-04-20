@@ -35,8 +35,10 @@ $routes->setAutoRoute(true);
 $routes->get('/testcurl', 'Home::testcurl');
 $routes->get('/testgs', 'Home::testgs');
 $routes->get('/testgs2', 'Home::testgsstatistik');
+$routes->get('/testscrape', 'Home::testcitationdosen');
 $routes->get('/testgs3', 'GoogleScholar::getNbCitationDosen');
 $routes->get('/testsitasi', 'Home::testcitationdosen');
+$routes->get('/testExcel', 'Home::testReadExcel');
 
 
 //routesmitra
@@ -44,6 +46,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/mitra', 'Mitra::index', ['filter' => 'auth']);
 $routes->get('/mitradata', 'Mitra::datakerjasama', ['filter' => 'auth']);
 $routes->post('/mitra/save', 'Mitra::save');
+$routes->post('/googlescholar/save', 'GoogleScholar::save');
 $routes->post('rekognisidosen/save', 'RekognisiDosen::save');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index', ['filter' => 'auth']);
 $routes->get('/rekognisidosendata', 'RekognisiDosen::dataRekognisiDosen', ['filter' => 'auth']);

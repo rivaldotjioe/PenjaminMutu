@@ -16,7 +16,8 @@ class MasterDosenModel extends Model
     protected $allowedFields = [
         'id_jurusan',
         'nama_dosen',
-        'bidang_keahlian'
+        'bidang_keahlian',
+        'idgs'
     ];
 
     public function getDosenName($id_dosen){

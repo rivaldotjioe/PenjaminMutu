@@ -25,6 +25,7 @@ class RekognisiDosenModel extends Model
             ->join('tingkat', 'tingkat.id_tingkat = rekognisi_dosen.id_tingkat')
             ->join('master_tahun', 'master_tahun.id_tahun = rekognisi_dosen.id_tahun')
             ->join('bukti_rekognisi', 'bukti_rekognisi.id_rekognisi = rekognisi_dosen.id_rekognisi')
+            ->where('rekognisi_dosen.deleted_at', null)
             ->get()->getResultArray();
     }
 }

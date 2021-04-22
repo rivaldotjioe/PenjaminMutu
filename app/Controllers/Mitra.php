@@ -94,6 +94,12 @@ class Mitra extends BaseController
         phpinfo();
     }
 
+    public function delete($id){
+        $this->kegiatanKerjasama->delete($id);
+        session()->setFlashdata('success', 'Data Berhasil Di Hapus');
+        return redirect()->to('/mitradata');
+    }
+
     public function saveLembaga()
     {
         $insert = $this->lembagaMitraModel->save([
@@ -151,5 +157,25 @@ class Mitra extends BaseController
             session()->setflashdata('error', 'Data Kerjasama Mitra Gagal Ditambahkan');
             return redirect()->to('/mitra');
         }
+    }
+
+    public function edit($id) {
+        $lembaga = $this->lembagaMitraModel->findAll();
+        $tingkat = $this->tingkatModel->findAll();
+        $tahun = $this->masterTahunModel->getYear();
+        $data = [
+            'lembagamitra' => $lembaga,
+            'tingkat' => $tingkat,
+            'tahun' => $tahun,
+            'validation' => \Config\Services::validation(),
+            'kerjasama' => $this->kegiatanKerjasama->find($id)
+        ];
+
+        echo view('dashboard');
+        echo view('/default/mitraedit', $data);
+    }
+
+    public function update(){
+
     }
 }

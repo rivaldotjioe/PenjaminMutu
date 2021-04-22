@@ -127,4 +127,10 @@ class RekognisiDosen extends BaseController
             return redirect()->to('/rekognisidosen');
         }
     }
+
+    public function delete($id) {
+        $this->rekognisiDosenModel->delete($id);
+
+        return redirect()->to('/rekognisidosendata');
+    }
 }

@@ -56,6 +56,8 @@
                             <th>Tahun</th>
                             <th>Keterangan</th>
                             <th>Bukti Rekognisi</th>
+							<th>Ubah</th>
+							<th>Hapus</th>
                         </tr>
                     </thead>
 
@@ -70,6 +72,18 @@
                                 <td><?= $d['id_tahun']; ?></td>
                                 <td><?= $d['keterangan_recognisi']; ?></td>
                                 <td><a href="\buktirekognisi\<?= $d['bukti']; ?>"><?= $d['bukti']; ?></a></td>
+								<td>
+                                    <form action="/rekognisidosendata/<?= $d['id_rekognisi']; ?>" method="post">
+                                        <button type="submit" name="ubah" class="btn btn-info btn-sm waves-effect w-md waves-light" id="sa-warning"> UBAH</button></td>
+                                    </form>
+
+								<td>
+                                    <form action="/rekognisidosendata/<?= $d['id_rekognisi']; ?>" method="post">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" name="hapus" class="btn btn-danger btn-sm waves-effect w-md waves-light" id="sa-warning" onclick="return confirm('Apakah anda yakin ?'); "> HAPUS</button></td>
+                                    </form>
+
                             </tr>
                         <?php endforeach; ?>
 

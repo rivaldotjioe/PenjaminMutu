@@ -42,7 +42,6 @@
                             <div class="col-12">
                                 <div class="card-box table-responsive">
                 <h4 class="m-t-0 header-title"><b>Mitra</b></h4>
-
                 <table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -53,6 +52,8 @@
                             <th>Lama Kerjasama </th>
                             <th>Manfaat</th>
                             <th>Bukti Kerjasama</th>
+							<th>Ubah</th>
+							<th>Hapus</th>
                         </tr>
                     </thead>
 
@@ -67,6 +68,24 @@
                                 <td><?= $k['durasi_kerjasama']; ?></td>
                                 <td><?= $k['manfaat_kerjasama']; ?></td>
                                 <td><a href="\buktikerjasama\<?= $k['bukti_kerjasama']; ?>"><?= $k['bukti_kerjasama']; ?></a></td>
+								<td>
+                                <form action="/mitradata/<?= $k['id_kegiatankerjasama']; ?>" method="post">
+                                    <a href="/mitradata/edit/<?= $k['id_kegiatankerjasama']; ?>" name="ubah" class="btn btn-info btn-sm waves-effect w-md waves-light" id="sa-warning"> UBAH</a>
+                                </form>
+                                </td>
+								<td>
+                                    <form action="/mitradata/<?= $k['id_kegiatankerjasama']; ?>" method="post">
+
+                                    </form>
+                                    <form action="/mitradata/<?= $k['id_kegiatankerjasama']; ?>" method="post">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" name="hapus"
+                                                class="btn btn-danger btn-sm waves-effect w-md waves-light"
+                                                id="sa-warning" onclick="return confirm('Apakah anda yakin ?'); "> HAPUS
+                                        </button></td>
+                                    </form>
+
                             </tr>
 
                         <?php endforeach; ?>

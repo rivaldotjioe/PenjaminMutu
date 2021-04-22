@@ -26,6 +26,7 @@ class KegiatanKerjasamaModel extends Model
     {
         return $this->db->table($this->table)
             ->join('lembagamitra', 'lembagamitra.id_lembagamitra = kegiatan_kerjasama.id_lembagamitra')
+            ->where('kegiatan_kerjasama.deleted_at', null)
             ->get()->getResultArray();
     }
 }

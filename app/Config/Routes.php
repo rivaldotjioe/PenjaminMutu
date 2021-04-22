@@ -40,10 +40,17 @@ $routes->get('/testgs3', 'GoogleScholar::getNbCitationDosen');
 $routes->get('/testsitasi', 'Home::testcitationdosen');
 $routes->get('/testExcel', 'Home::testReadExcel');
 
+//routes delete
+$routes->delete('/mitradata/(:num)', 'Mitra::delete/$1');
+$routes->delete('/rekognisidosendata/(:num)', 'RekognisiDosen::delete/$1');
+
+//routes update
+$routes->get('/mitradata/edit/(:segment)','Mitra::edit/$1');
 
 //routesmitra
 $routes->get('/', 'Home::index');
 $routes->get('/mitra', 'Mitra::index', ['filter' => 'auth']);
+
 $routes->get('/mitradata', 'Mitra::datakerjasama', ['filter' => 'auth']);
 $routes->post('/mitra/save', 'Mitra::save');
 $routes->post('/googlescholar/save', 'GoogleScholar::save');

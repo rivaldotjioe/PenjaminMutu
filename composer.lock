@@ -729,16 +729,16 @@
         },
         {
             "name": "shuchkin/simplexlsx",
-            "version": "0.8.21",
+            "version": "0.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shuchkin/simplexlsx.git",
-                "reference": "6b6b2a7eed22a38cdb8c5e8ed17e4aa80eb40ced"
+                "reference": "c85565e17e0b04c199fae4faf0f8c3e075d1b0af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shuchkin/simplexlsx/zipball/6b6b2a7eed22a38cdb8c5e8ed17e4aa80eb40ced",
-                "reference": "6b6b2a7eed22a38cdb8c5e8ed17e4aa80eb40ced",
+                "url": "https://api.github.com/repos/shuchkin/simplexlsx/zipball/c85565e17e0b04c199fae4faf0f8c3e075d1b0af",
+                "reference": "c85565e17e0b04c199fae4faf0f8c3e075d1b0af",
                 "shasum": ""
             },
             "require": {
@@ -774,9 +774,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shuchkin/simplexlsx/issues",
-                "source": "https://github.com/shuchkin/simplexlsx/tree/0.8.21"
+                "source": "https://github.com/shuchkin/simplexlsx/tree/0.8.22"
             },
-            "time": "2021-01-10T23:21:38+00:00"
+            "time": "2021-04-19T18:11:14+00:00"
         },
         {
             "name": "symfony/browser-kit",

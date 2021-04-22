@@ -13,19 +13,19 @@
 	<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
 	<meta content="Coderthemes" name="author" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+    <base href="http://localhost:8080/">
 
 	<!-- Sweet Alert -->
-	<link href="../plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+	<link href="../../plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
 
 
 	<!-- Plugins css-->
-	<link href="../plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-	<link href="../plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-	<link href="../plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
-	<link href="../plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="../plugins/switchery/switchery.min.css">
+	<link href="plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
+	<link href="plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css"" rel="stylesheet" />
+	<link rel="stylesheet" href="plugins/switchery/switchery.min.css"">
 
 
 </head>
@@ -132,7 +132,7 @@
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Nama Kegiatan</label>
 											<div class="col-10">
-												<input type="text" class="form-control <?= ($validation->hasError('namakegiatan')) ?  'is-invalid' : ''; ?>" name="namakegiatan" placeholder="Nama Kegiatan" value="<?= old('namakegiatan'); ?>">
+												<input type="text" class="form-control <?= ($validation->hasError('namakegiatan')) ?  'is-invalid' : ''; ?>" name="namakegiatan" placeholder="Nama Kegiatan" value="<?= $kerjasama['nama_kegiatan'] ?>">
 												<div class="invalid-feedback">
 													<?= $validation->getError('namakegiatan'); ?>
 												</div>
@@ -144,10 +144,14 @@
 											<div class="col-10">
 												<select class="form-control select2 <?= ($validation->hasError('tingkat')) ?  'is-invalid' : ''; ?>" name="tingkat">
 													<option value="" disabled selected>Pilih Tingkat</option>
-													<option value="Kota">Kota</option>
-													<option value="Provinsi">Provinsi</option>
-													<option value="Nasional">Nasional</option>
-													<option value="Internasional">Internasional</option>
+                                                    <?php $tingkat = array("Kota", "Provinsi", "Nasional", "Internasional"); ?>
+                                                    <?php foreach ($tingkat as $item) : ?>
+                                                    <?php if ($item==$kerjasama['tingkat']) :?>
+                                                    <option value="<?= $item; ?>" selected><?= $item; ?></option>
+                                                    <?php  else : ?>
+                                                    <option value="<?= $item; ?>"><?= $item; ?></option>
+                                                    <?php endif; ?>
+                                                    <?php endforeach;?>
 
 												</select>
 												<div class="invalid-feedback">
@@ -221,8 +225,8 @@
 
 
 	<script src="../plugins/switchery/switchery.min.js"></script>
-	<script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-	<script src="../plugins/select2/js/select2.min.js" type="text/javascript"></script>
+	<script src="../plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js""></script>
+	<script src="../plugins/select2/js/select2.min.js"" type="text/javascript"></script>
 	<script src="../plugins/bootstrap-select/js/bootstrap-select.js" type="text/javascript"></script>
 	<script src="../plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
 	<script src="../plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>

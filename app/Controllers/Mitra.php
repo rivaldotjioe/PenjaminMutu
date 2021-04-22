@@ -51,7 +51,7 @@ class Mitra extends BaseController
         $data = [
             'kerjasamamitra' => $datakerjasamamitra
         ];
-       echo view('dashboard');
+        echo view('dashboard');
         echo view('/default/datamitra', $data);
     }
 

@@ -140,11 +140,10 @@ class RekognisiDosen extends BaseController
             'tingkat' => $tingkat,
             'tahun' => $tahun,
             'validation' => \Config\Services::validation(),
-            'rekognisi' => $this->rekognisiDosenModel->getPieceData($id)
+            'rekognisi' => $this->rekognisiDosenModel->getPieceData($id)[0]
         ];
-
-        dd($data);
         echo view('dashboard');
         echo view('/default/rekognisiedit', $data);
+
     }
 }

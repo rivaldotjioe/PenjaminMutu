@@ -30,7 +30,7 @@ class RekognisiDosenModel extends Model
     }
 
     public function getPieceData($id_rekognisi){
-        $arraycondition = array('rekognisi_dosen.deleted_at' => null, 'id_rekognisi' => $id_rekognisi);
+        $arraycondition = array('rekognisi_dosen.deleted_at' => null, 'rekognisi_dosen.id_rekognisi' => $id_rekognisi);
         return $this->db->table($this->table)
             ->join('jenis_recognisi', 'jenis_recognisi.id_jenis = rekognisi_dosen.id_jenis')
             ->join('tingkat', 'tingkat.id_tingkat = rekognisi_dosen.id_tingkat')

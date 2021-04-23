@@ -44,8 +44,9 @@ $routes->get('/testExcel', 'Home::testReadExcel');
 $routes->delete('/mitradata/(:num)', 'Mitra::delete/$1');
 $routes->delete('/rekognisidosendata/(:num)', 'RekognisiDosen::delete/$1');
 
-//routes update
+//routes form edit
 $routes->get('/mitradata/edit/(:segment)','Mitra::edit/$1');
+$routes->post('/mitra/edit/(:segment)', 'Mitra::update/$1');
 
 //routesmitra
 $routes->get('/', 'Home::index');

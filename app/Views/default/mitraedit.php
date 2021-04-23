@@ -92,6 +92,7 @@
 			<div class="row">
 				<div class="col-12">
 					<form class="form-horizontal" enctype="multipart/form-data" role="form" action="mitra/edit/<?= $kerjasama['id_kegiatankerjasama']; ?>" method="post">
+                        <input type="hidden" name="id_kegiatankerjasama" value="<?= $kerjasama['id_kegiatankerjasama']; ?>">
 						<div class="card-box">
 							<h4 class="m-t-0 header-title">Kerjasama Mitra</h4>
 							<?php if (session()->getFlashData('success')) : ?>
@@ -123,6 +124,7 @@
 
 													</optgroup>
 												</select>
+
 												<div class="invalid-feedback">
 													<?= $validation->getError('lembagamitra'); ?>
 												</div>
@@ -166,9 +168,18 @@
 											<div class="col-4">
 												<select class="form-control select2 <?= ($validation->hasError('tahunmulai')) ?  'is-invalid' : ''; ?>" name="tahunmulai">
 													<option value="" disabled selected>Pilih Tahun Kerjasama</option>
-													<?php foreach ($tahun as $thn) : ?>
-														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
-													<?php endforeach; ?>
+                                                    <?php $tahunkerjasama = $kerjasama['tahun_kerjasama'];?>
+                                                    <?php foreach ($tahun as $thn) : ?>
+                                                        <?php if ($thn['id_tahun'] == $tahunkerjasama) : ?>
+                                                            <option value="<?= $tahunkerjasama; ?>" selected><?= $tahunkerjasama; ?></option>
+                                                            <?php $tahunkerjasama=null;?>
+                                                        <?php else :?>
+                                                            <option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
+                                                        <?php endif;?>
+                                                    <?php endforeach; ?>
+                                                    <?php if (!is_null($tahunkerjasama)):?>
+                                                        <option value="<?= $tahunkerjasama; ?>" selected><?= $tahunkerjasama; ?></option>
+                                                    <?php endif;?>
 												</select>
 												<div class="invalid-feedback">
 													<?= $validation->getError('tahunmulai'); ?>
@@ -179,9 +190,18 @@
 											<div class="col-4">
 												<select class="form-control select2 <?= ($validation->hasError('tahunberakhir')) ?  'is-invalid' : ''; ?>" name="tahunberakhir">
 													<option value="" disabled selected>Pilih Tahun Kerjasama Berakhir</option>
+                                                    <?php $tahunberakhir = $kerjasama['tahun_berakhir'];?>
 													<?php foreach ($tahun as $thn) : ?>
-														<option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
+                                                    <?php if ($thn['id_tahun'] == $tahunberakhir) : ?>
+														<option value="<?= $tahunberakhir; ?>" selected><?= $tahunberakhir; ?></option>
+                                                    <?php $tahunberakhir=null;?>
+                                                    <?php else :?>
+                                                    <option value="<?= $thn['id_tahun']; ?>"><?= $thn['id_tahun']; ?></option>
+                                                    <?php endif;?>
 													<?php endforeach; ?>
+                                                    <?php if (!is_null($tahunberakhir)):?>
+                                                    <option value="<?= $tahunberakhir; ?>" selected><?= $tahunberakhir; ?></option>
+                                                    <?php endif;?>
 												</select>
 												<div class="invalid-feedback">
 													<?= $validation->getError('tahunberakhir'); ?>
@@ -192,7 +212,7 @@
 										<div class="form-group row">
 											<label class="col-2 col-form-label">Manfaat Kerjasama</label>
 											<div class="col-10">
-												<textarea class="form-control <?= ($validation->hasError('manfaat')) ?  'is-invalid' : ''; ?>" name="manfaat" rows="5"></textarea>
+												<textarea class="form-control <?= ($validation->hasError('manfaat')) ?  'is-invalid' : ''; ?>" name="manfaat" rows="5" ><?= $kerjasama['manfaat_kerjasama']; ?></textarea>
 												<div class="invalid-feedback">
 													<?= $validation->getError('menfaat'); ?>
 												</div>

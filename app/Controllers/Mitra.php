@@ -171,11 +171,48 @@ class Mitra extends BaseController
             'kerjasama' => $this->kegiatanKerjasama->find($id)
         ];
 
-        echo view('dashboard');
+
         echo view('/default/mitraedit', $data);
+        return view('dashboard');
     }
 
-    public function update(){
-
+    public function update($id){
+        $update = false;
+        $durasi = (int)$this->request->getVar('tahunberakhir') - (int)$this->request->getVar('tahunmulai');
+        $file = $this->request->getFile('buktikerjasama');
+        if ($file->getSize()==0){
+            $update = $this->kegiatanKerjasama->save([
+                'id_kegiatankerjasama' => $id,
+                'id_lembagamitra' => $this->request->getVar('lembagamitra'),
+                'nama_kegiatan' => $this->request->getVar('namakegiatan'),
+                'tingkat' => $this->request->getVar('tingkat'),
+                'manfaat_kerjasama' => $this->request->getVar('manfaat'),
+                'durasi_kerjasama' => $durasi,
+                'tahun_berakhir' => $this->request->getVar('tahunberakhir'),
+                'tahun_kerjasama' => $this->request->getVar('tahunmulai')
+            ]);
+        } else {
+            $bukti = $file->getRandomName();
+            $file->move('buktikerjasama', $bukti);
+            $update = $this->kegiatanKerjasama->save([
+                'id_kegiatankerjasama' => $id,
+                'id_lembagamitra' => $this->request->getVar('lembagamitra'),
+                'nama_kegiatan' => $this->request->getVar('namakegiatan'),
+                'tingkat' => $this->request->getVar('tingkat'),
+                'manfaat_kerjasama' => $this->request->getVar('manfaat'),
+                'durasi_kerjasama' => $durasi,
+                'tahun_berakhir' => $this->request->getVar('tahunberakhir'),
+                'tahun_kerjasama' => $this->request->getVar('tahunmulai'),
+                'bukti_kerjasama' => $bukti
+            ]);
+        }
+        if ($update) {
+            session()->setFlashdata('success', 'Data Kerjasama Mitra Berhasil Diupdate');
+            return redirect()->to('/mitra');
+            unset($_POST);
+        } else {
+            session()->setflashdata('error', 'Data Kerjasama Mitra Gagal Diupdate');
+            return redirect()->to('/mitra/edit'.$id);
+        }
     }
 }

@@ -142,8 +142,8 @@ class RekognisiDosen extends BaseController
             'validation' => \Config\Services::validation(),
             'rekognisi' => $this->rekognisiDosenModel->getPieceData($id)[0]
         ];
-        echo view('dashboard');
-        echo view('/default/rekognisiedit', $data);
 
+        echo view('/default/rekognisiedit', $data);
+        return view('dashboard');
     }
 }

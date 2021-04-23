@@ -73,10 +73,7 @@
                                 <td><?= $d['keterangan_recognisi']; ?></td>
                                 <td><a href="\buktirekognisi\<?= $d['bukti']; ?>"><?= $d['bukti']; ?></a></td>
 								<td>
-                                    <form action="/rekognisidosendata/<?= $d['id_rekognisi']; ?>" method="post">
-                                        <button type="submit" name="ubah" class="btn btn-info btn-sm waves-effect w-md waves-light" id="sa-warning"> UBAH</button></td>
-                                    </form>
-
+                                        <a href="/rekognisidosen/edit/<?= $d['id_rekognisi']; ?>" name="ubah" class="btn btn-info btn-sm waves-effect w-md waves-light" id="sa-warning"> UBAH</a>
 								<td>
                                     <form action="/rekognisidosendata/<?= $d['id_rekognisi']; ?>" method="post">
                                         <?= csrf_field(); ?>

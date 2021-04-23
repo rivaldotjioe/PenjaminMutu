@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="Description" CONTENT="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages">
 	<meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
-	<title>Kerjasama Mitra</title>
+	<title>Rekognisi Dosen</title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<title>Adminox - Responsive Web App Kit</title>
@@ -42,7 +42,7 @@
                                 <div class="page-title-box">
                                     <h4 class="page-title float-left">DATA REKOGNISI DOSEN</h4>
 
-
+                                
 
                                     <div class="clearfix"></div>
                                 </div>
@@ -51,8 +51,7 @@
                         <!-- end row -->
 			<div class="row">
 				<div class="col-12">
-				<form class="form-horizontal" enctype="multipart/form-data" role="form" action="/rekognisidosen/save" method="post">
-                    <?= csrf_field(); ?>
+				<form class="form-horizontal" action="/rekognisidosen/edit/<?= $rekognisi['id_rekognisi']; ?>" method="post" role="form" enctype="multipart/form-data">
 					<div class="card-box">
 						<h4 class="m-t-0 header-title">Rekognisi Dosen</h4>
 						<?php if (session()->getFlashData('success')) : ?>
@@ -74,9 +73,8 @@
 											<div class="col-10">
 												<select class="form-control select2 <?= ($validation->hasError('id_dosen')) ?  'is-invalid' : ''; ?>" name="id_dosen" value="<?= old('id_dosen'); ?>">
 													<option value="" disabled selected>Pilih Nama Dosen</option>
-                                                    <?php foreach ($dosen as $item) :?>
-                                                        <option value="<?= $item['id_dosen']; ?>"><?= $item['nama_dosen']; ?></option>
-                                                    <?php endforeach;?>
+													<option value="18082010026">Rivaldo Hadi Winata </option>
+													<option value="18082010035">Helmy Kurniawan</option>
 												</select>
 												<div class="invalid-feedback">
 													<?= $validation->getError('id_dosen'); ?>

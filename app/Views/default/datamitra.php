@@ -69,9 +69,8 @@
                                 <td><?= $k['manfaat_kerjasama']; ?></td>
                                 <td><a href="\buktikerjasama\<?= $k['bukti_kerjasama']; ?>"><?= $k['bukti_kerjasama']; ?></a></td>
 								<td>
-                                <form action="/mitradata/<?= $k['id_kegiatankerjasama']; ?>" method="post">
                                     <a href="/mitradata/edit/<?= $k['id_kegiatankerjasama']; ?>" name="ubah" class="btn btn-info btn-sm waves-effect w-md waves-light" id="sa-warning"> UBAH</a>
-                                </form>
+
                                 </td>
 								<td>
                                     <form action="/mitradata/<?= $k['id_kegiatankerjasama']; ?>" method="post">

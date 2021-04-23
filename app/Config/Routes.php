@@ -47,6 +47,8 @@ $routes->delete('/rekognisidosendata/(:num)', 'RekognisiDosen::delete/$1');
 //routes form edit
 $routes->get('/mitradata/edit/(:segment)','Mitra::edit/$1');
 $routes->post('/mitra/edit/(:segment)', 'Mitra::update/$1');
+$routes->get('/rekognisidosen/edit/(:segment)', 'RekognisiDosen::edit/$1');
+$routes->post('/rekognisidosen/edit/(:segment)', 'RekognisiDosen::update/$1');
 
 //routesmitra
 $routes->get('/', 'Home::index');
@@ -55,7 +57,7 @@ $routes->get('/mitra', 'Mitra::index', ['filter' => 'auth']);
 $routes->get('/mitradata', 'Mitra::datakerjasama', ['filter' => 'auth']);
 $routes->post('/mitra/save', 'Mitra::save');
 $routes->post('/googlescholar/save', 'GoogleScholar::save');
-$routes->post('rekognisidosen/save', 'RekognisiDosen::save');
+$routes->post('/rekognisidosen/save', 'RekognisiDosen::save');
 $routes->get('/rekognisidosen', 'RekognisiDosen::index', ['filter' => 'auth']);
 $routes->get('/rekognisidosendata', 'RekognisiDosen::dataRekognisiDosen', ['filter' => 'auth']);
 $routes->post('/mitra/savelembaga', 'Mitra::saveLembaga');

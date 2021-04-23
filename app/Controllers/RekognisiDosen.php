@@ -31,27 +31,25 @@ class RekognisiDosen extends BaseController
         $this->buktiRekognisiModel = new BuktiRekognisiModel();
         $this->jenisRekognisiModel = new JenisRekognisiModel();
         $this->masterDosenModel = new MasterDosenModel();
-
-
     }
     public function index()
     {
-        helper(['my_helper']);
-        if (checkLogin()){
-        } else {
-            redirect()->to('/login');
-        }
+//        helper(['my_helper']);
+//        if (checkLogin()){
+//        } else {
+//            redirect()->to('/login');
+//        }
         $tingkat = $this->tingkatModel->findAll();
         $tahun = $this->masterTahunModel->getYear();
+        $dosen = $this->masterDosenModel->findAll();
         $data = [
             'tingkat' => $tingkat,
             'tahun' => $tahun,
+            'dosen' => $dosen,
             'validation' => \Config\Services::validation()
         ];
         echo view('dashboard');
         echo view('/default/rekognisi', $data);
-        
-
     }
 
     public function dataRekognisiDosen()
@@ -82,6 +80,7 @@ class RekognisiDosen extends BaseController
 
     public function save()
     {
+
         if (!$this->validate([
             'id_dosen' => 'required',
             'bidangkeahlian' => 'required',
@@ -89,10 +88,10 @@ class RekognisiDosen extends BaseController
             'tingkat' => 'required',
             'id_tahun' => 'required',
             'keterangan' => 'required',
-            'buktirekognisi' => 'required'
+            'buktirekognisi' => 'uploaded[buktirekognisi]'
         ])) {
             $validation = \Config\Services::validation();
-            // session()->setFlashdata('error', $validation['errors']);
+            session()->setflashdata('error', 'Data Rekognisi Dosen Gagal Ditambahkan');
             return redirect()->to('/rekognisidosen')->withInput()->with('validation', $validation);
         }
 
@@ -132,5 +131,20 @@ class RekognisiDosen extends BaseController
         $this->rekognisiDosenModel->delete($id);
 
         return redirect()->to('/rekognisidosendata');
+    }
+
+    public function edit($id) {
+        $tingkat = $this->tingkatModel->findAll();
+        $tahun = $this->masterTahunModel->getYear();
+        $data = [
+            'tingkat' => $tingkat,
+            'tahun' => $tahun,
+            'validation' => \Config\Services::validation(),
+            'rekognisi' => $this->rekognisiDosenModel->getPieceData($id)
+        ];
+
+        dd($data);
+        echo view('dashboard');
+        echo view('/default/rekognisiedit', $data);
     }
 }

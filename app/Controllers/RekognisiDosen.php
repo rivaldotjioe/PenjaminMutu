@@ -136,14 +136,76 @@ class RekognisiDosen extends BaseController
     public function edit($id) {
         $tingkat = $this->tingkatModel->findAll();
         $tahun = $this->masterTahunModel->getYear();
+        $dosen = $this->masterDosenModel->findAll();
+        $rekognisi = $this->rekognisiDosenModel->getPieceData($id)[0];
         $data = [
             'tingkat' => $tingkat,
             'tahun' => $tahun,
             'validation' => \Config\Services::validation(),
-            'rekognisi' => $this->rekognisiDosenModel->getPieceData($id)[0]
+            'rekognisi' => $rekognisi,
+            'dosen' => $dosen,
+            'bidang' => $this->masterDosenModel->getDosenBidang($rekognisi['id_dosen'])
         ];
 
-        echo view('/default/rekognisiedit', $data);
+         echo view('/default/rekognisiedit', $data);
         return view('dashboard');
+    }
+
+    public function update($id){
+        $insertJenis = false;
+        $insertRekognisi = false;
+        $insertBuktiRekognisi = false;
+        $file = $this->request->getFile('buktirekognisi');
+        if ($file->getSize()==0){
+            $insertJenis = $this->jenisRekognisiModel->save([
+                'id_jenis' => $this->request->getVar('id_jenis'),
+                'keterangan_recognisi' => $this->request->getVar('keterangan'),
+                'nama_recognisi' => $this->request->getVar('namarekognisi')
+            ]);
+            $idjenisrekognisi = $this->request->getVar('id_jenis');
+            $insertRekognisi = $this->rekognisiDosenModel->save([
+                'id_rekognisi' => $id,
+                'id_dosen' => $this->request->getVar('id_dosen'),
+                'id_tingkat' => $this->request->getVar('tingkat'),
+                'id_tahun' => $this->request->getVar('id_tahun'),
+                'id_jenis' => $idjenisrekognisi,
+                'keterangan_recognisi' => $this->request->getVar('keterangan')
+            ]);
+            $insertBuktiRekognisi = true;
+        } else {
+            $bukti = $file->getRandomName();
+            $file->move('buktirekognisi', $bukti);
+            //insert
+            $insertJenis = $this->jenisRekognisiModel->save([
+                'id_jenis' => $this->request->getVar('id_jenis'),
+                'keterangan_recognisi' => $this->request->getVar('keterangan'),
+                'nama_recognisi' => $this->request->getVar('namarekognisi')
+            ]);
+            $idjenisrekognisi = $this->request->getVar('id_jenis');
+            $insertRekognisi = $this->rekognisiDosenModel->save([
+                'id_rekognisi' => $id,
+                'id_dosen' => $this->request->getVar('id_dosen'),
+                'id_tingkat' => $this->request->getVar('tingkat'),
+                'id_tahun' => $this->request->getVar('id_tahun'),
+                'id_jenis' => $idjenisrekognisi,
+                'keterangan_recognisi' => $this->request->getVar('keterangan')
+            ]);
+            $idRekognisi = $this->rekognisiDosenModel->getInsertedId();
+            $insertBuktiRekognisi = $this->buktiRekognisiModel->save([
+                'id_buktirekognisi' => $this->request->getVar('id_buktirekognisi'),
+                'id_rekognisi' => $idRekognisi,
+                'bukti' => $bukti
+            ]);
+        }
+
+        if ($insertJenis && $insertRekognisi && $insertBuktiRekognisi) {
+            session()->setFlashdata('success', 'Data Rekognisi Dosen Berhasil Ditambahkan');
+            return redirect()->to('/rekognisidosen');
+            unset($_POST);
+        } else {
+            session()->setflashdata('error', 'Data Rekognisi Dosen Gagal Ditambahkan');
+            return redirect()->to('/rekognisidosen');
+        }
+
     }
 }

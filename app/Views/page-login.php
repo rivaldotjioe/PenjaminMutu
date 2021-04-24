@@ -89,8 +89,8 @@
 
                             <div class="account-pages">
 								
-                                        <img src="images/logo_eis.png" alt="Image" height="300px">
-								<h4> Selamat Datang di Website Resmi</h4>
+                                        <img src="assets/images/logoupn.png" alt="Image" height="300px">
+								<h4> Selamat Datang di Website Penjamin Mutu UPN Veteran Jatim</h4>
                                         </div>
 							
                                     </div>

@@ -27,6 +27,13 @@ class MasterDosenModel extends Model
             ->get()->getRowArray();
     }
 
+    public function getDosenBidang($id_dosen){
+        return $this->db->table($this->table)
+            ->select('bidang_keahlian')
+            ->where('id_dosen', $id_dosen)
+            ->get()->getRowArray();
+    }
+
     public function getIdGs($id_dosen){
         return $this->db->table($this->table)
             ->select('idgs')

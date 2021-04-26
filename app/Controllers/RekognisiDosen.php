@@ -148,7 +148,7 @@ class RekognisiDosen extends BaseController
         ];
 
          echo view('/default/rekognisiedit', $data);
-        return view('dashboard');
+        echo view('dashboard');
     }
 
     public function update($id){

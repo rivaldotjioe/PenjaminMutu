@@ -134,6 +134,13 @@
                                     <li><a href="/scholar">Data Google Scholar</a></li>
                                 </ul>
                             </li>
+							 <li>
+                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Setting Akun </span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="/inputidscholar">Setting Akun Dosen</a></li>
+                                   
+                                </ul>
+                            </li>
                         </ul>
 
                     </div>

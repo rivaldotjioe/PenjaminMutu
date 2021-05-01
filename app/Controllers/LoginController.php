@@ -8,6 +8,9 @@ use App\Models\UserModel;
 
 class LoginController extends BaseController
 {
+
+    public $AdminLevel = 1;
+    public $DosenLevel = 2;
     protected $userModel;
     public function __construct()
     {
@@ -37,10 +40,12 @@ class LoginController extends BaseController
         $db = \Config\Database::connect('helper');
         $user = $this->userModel->where('username',$username)
                                 ->first();
+
         if (!empty($user)) {
             if (password_verify($password, $user['password'])){
                 $session_data = [
                   'username' => $username,
+                    'user_level' =>$user['user_level'],
                     'logged_in' => true
                 ];
                 $session->set($session_data);

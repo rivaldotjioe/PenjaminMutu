@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="Description" CONTENT="Author: A.N. Author, Illustrator: P. Picture, Category: Books, Price:  £9.24, Length: 784 pages">
 	<meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=" />
-	<title>Kerjasama Mitra</title>
+	<title>Akun Penjamin Mutu</title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<title>Adminox - Responsive Web App Kit</title>
@@ -51,7 +51,7 @@
                         <!-- end row -->
 			<div class="row">
 				<div class="col-12">
-				<form class="form-horizontal" enctype="multipart/form-data" role="form" action="/akun/save" method="post">
+				<form class="form-horizontal" enctype="multipart/form-data" role="form" action="/akun/create" method="post">
                     <?= csrf_field(); ?>
 					<div class="card-box">
 						<h4 class="m-t-0 header-title">Setting Akun</h4>
@@ -83,24 +83,45 @@
 												</div>
 											</div>
 										</div>
+                                    <div class="form-group row">
+                                        <label class="col-2 col-form-label">Username</label>
+                                        <div class="col-10">
+                                            <input type="text" class="form-control" name="username" placeholder="Password" >
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
 										<div class="form-group row">
-											<label class="col-2 col-form-label">Masukkan Password</label>
+											<label class="col-2 col-form-label">Password</label>
 											<div class="col-10">
-												<input type="password" class="form-control" name="password" placeholder="Password" >
+												<input type="password" class="form-control" name="password" id="password" onkeyup="check()" placeholder="Password" >
 												<div class="invalid-feedback">
-												
+												    <span id="pass_message"></span>
 												</div>
 											</div>
 										</div>
 									<div class="form-group row">
-											<label class="col-2 col-form-label">Masukkan Password</label>
+											<label class="col-2 col-form-label">Konfirmasi Password</label>
 											<div class="col-10">
-												<input type="password" class="form-control" name="password" placeholder="Password" >
+												<input type="password" class="form-control" name="confirm_password" id="confirm_password" onkeyup="check()" placeholder="Password" >
 												<div class="invalid-feedback">
-												
+												    <span id="pass_message"></span>
 												</div>
 											</div>
-										</div>							
+										</div>
+                                    <div class="form-group row">
+                                        <label class="col-2 col-form-label">User Level</label>
+                                        <div class="col-10">
+                                            <select class="form-control select2 <?= ($validation->hasError('user_level')) ?  'is-invalid' : ''; ?>" name="user_level" value="<?= old('id_dosen'); ?>">
+                                                <option value="" disabled selected>Pilih NPT Dosen</option>
+                                                    <option value="1">Admin</option>
+                                                    <option value="2">Dosen</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError('id_dosen'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 							<div align="right" class="input-field col s11">
@@ -114,8 +135,6 @@
 		</div>
 	</div>
 	</div>
-
-
 
 
 	<script src="../plugins/switchery/switchery.min.js"></script>

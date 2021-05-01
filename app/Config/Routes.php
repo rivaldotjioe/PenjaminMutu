@@ -54,6 +54,9 @@ $routes->post('/rekognisidosen/edit/(:segment)', 'RekognisiDosen::update/$1');
 $routes->get('/', 'Home::index');
 $routes->get('/mitra', 'Mitra::index', ['filter' => 'auth']);
 
+$routes->get('/akun', 'UserAccountController::index');
+$routes->post('/akun/create', 'UserAccountController::createAccount');
+
 $routes->get('/mitradata', 'Mitra::datakerjasama', ['filter' => 'auth']);
 $routes->post('/mitra/save', 'Mitra::save');
 $routes->post('/googlescholar/save', 'GoogleScholar::save');

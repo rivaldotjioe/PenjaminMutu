@@ -42,7 +42,15 @@
                                     </div>
                                     <div class="account-content">
                                         <form class="form-horizontal" action="/login" method="post">
-
+                                            <?php if (session()->getFlashData('success')) : ?>
+                                                <div class="alert alert-success" role="alert">
+                                                    <?= session()->getFlashData('success'); ?>
+                                                </div>
+                                            <?php elseif (session()->getFlashData('error')) : ?>
+                                                <div class="alert alert-danger" role="alert">
+                                                    <?= session()->getFlashData('error'); ?>
+                                                </div>
+                                            <?php endif; ?>
                                             <div class="form-group m-b-20 row">
                                                 <div class="col-12">
                                                     <label for="username">Username</label>

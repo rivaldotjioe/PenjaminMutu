@@ -42,6 +42,7 @@ class LoginController extends BaseController
                                 ->first();
 
         if (!empty($user)) {
+
             if (password_verify($password, $user['password'])){
                 $session_data = [
                   'username' => $username,
@@ -50,10 +51,16 @@ class LoginController extends BaseController
                 ];
                 $session->set($session_data);
                 return redirect()->to('/dashboard');
-            }
+            } else {
+            session()->setFlashdata('error', 'Username atau Password salah');
+            return redirect()->to('/login');
         }
 
 
+    } else {
+        }
+        session()->setFlashdata('error', 'Username atau Password salah');
+        return redirect()->to('/login');
     }
 
     public function logout(){

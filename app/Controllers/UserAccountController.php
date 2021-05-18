@@ -43,12 +43,14 @@ class UserAccountController extends BaseController
         }
         $id_dosen = $this->request->getVar('id_dosen');
         $password = password_hash($this->request->getVar('password'),PASSWORD_DEFAULT);
-        $insertUser = $this->userModel->save([
+        //ubah save karena dianggap update ada pk username di inputkan
+        $newAccount = [
             'username' => $this->request->getVar('username'),
             'password' => $password,
             'id_dosen_fk' => $this->request->getVar('id_dosen'),
             'user_level' => $this->request->getVar('user_level')
-        ]);
+        ];
+        $insertUser = $this->userModel->insert($newAccount);
 
         if ($insertUser) {
             session()->setFlashdata('success', 'Akun Berhasil Di Buat');

@@ -2,8 +2,8 @@
 
 function checkLogin(){
     $session = session();
-    if (is_null($session->get('logged_in'))) {
-        return false;
+    if ($session->get('logged_in')) {
+        return $session->get('logged_in');
     } else {
         return $session->get('logged_in');
     }

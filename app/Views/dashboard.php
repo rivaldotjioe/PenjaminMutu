@@ -91,6 +91,7 @@
                                     <li><a href="/rekognisidosendata">Data Rekognisi Dosen</a></li>
                                 </ul>
                             </li>
+
                             <li>
                                 <a href="javascript: void(0);"><i class="fi-paper"></i> <span> Google Scholar </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -98,6 +99,7 @@
                                     <li><a href="/scholar">Data Google Scholar</a></li>
                                 </ul>
                             </li>
+                            <?php if (session()->get('user_level')==1) :?>
 							 <li>
                                 <a href="javascript: void(0);"><i class="fi-cog"></i> <span> Setting Akun </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -105,6 +107,7 @@
                                    
                                 </ul>
                             </li>
+                            <?php endif;?>
                         </ul>
 
                     </div>

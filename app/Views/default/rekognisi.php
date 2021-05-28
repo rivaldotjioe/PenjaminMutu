@@ -8,7 +8,7 @@
 	<title>Kerjasama Mitra</title>
 	<meta name="robots" content="noindex,nofollow">
 
-	<title>Adminox - Responsive Web App Kit</title>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
 	<meta content="Coderthemes" name="author" />
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title float-left">DATA REKOGNISI DOSEN</h4>
+                                    <h4 class="page-title float-left">FORM REKOGNISI DOSEN</h4>
 
 
 

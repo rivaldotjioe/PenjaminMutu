@@ -36,7 +36,7 @@
                                 <div class="account-box">
                                     <div class="account-logo-box">
                                         <h2 class="text-uppercase text-center">
-                                            Sign In
+                                            Masuk
                                         </h2>
                                                 
                                     </div>
@@ -60,7 +60,7 @@
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <a href="lupa-pass" class="text-muted pull-right"><small>Lupa Password?</small></a>
+                                                    
                                                     <label for="password">Kata Sandi</label>
                                                     <input class="form-control" type="password" name="password" required="" id="password" placeholder="Masukkan Kata Sandi">
                                                 </div>
@@ -75,12 +75,7 @@
                                         </form>
 
                                         
-                                        <div class="row m-t-50">
-                                            <div class="col-sm-12 text-center">
-                                                <p class="text-muted">Belum Punya Akun? <a href="daftar" class="text-dark m-l-5"><b>Daftar</b></a></p>
-                                            </div>
-                                        </div>
-
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -97,8 +92,10 @@
 
                             <div class="account-pages">
 								
-                                        <img src="assets/images/logoupn.png" alt="Image" height="300px">
-								<h4> Selamat Datang di Website Penjamin Mutu UPN Veteran Jatim</h4>
+                                        <img src="assets/images/logoupn.png" alt="Image" height="250px">
+								<h3> Selamat Datang</h3>
+								<h3>di Website Penjamin Mutu</h3>
+								<h3> UPN Veteran Jatim</h3>
                                         </div>
 							
                                     </div>

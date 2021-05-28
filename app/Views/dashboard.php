@@ -32,67 +32,31 @@
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
                         <span>
-                            <img src="assets/images/logo.png" alt="" height="25">
+                            <img src="assets/images/logoupn.png" alt="" height="75">
                         </span>
                         <i>
-                            <img src="assets/images/logo_sm.png" alt="" height="28">
+                            <img src="assets/images/logoupn.png" alt="" height="28">
                         </i>
                     </a>
                 </div>
 
                 <nav class="navbar-custom">
-
                     <ul class="list-inline float-right mb-0">
-                     
-
-                        <li class="list-inline-item dropdown notification-list">
-                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome</small> </h5>
-                                </div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-circle"></i> <span>Profile</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-settings"></i> <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="/logout" class="dropdown-item notify-item">
+                        <li class="list-inline-item btn notification-list">
+							
+                                <a href="/logout" class="btn-danger waves-effect notify-item">
                                     <i class="mdi mdi-power"></i> <span>Logout</span>
                                 </a>
-
-                            </div>
+                           
                         </li>
-
                     </ul>
-
                     <ul class="list-inline menu-left mb-0">
                         <li class="float-left">
                             <button class="button-menu-mobile open-left waves-light waves-effect">
                                 <i class="dripicons-menu"></i>
                             </button>
                         </li>
-                        <li class="hide-phone app-search">
-                            <form role="search" class="">
-                                <input type="text" placeholder="Search..." class="form-control">
-                                <a href=""><i class="fa fa-search"></i></a>
-                            </form>
-                        </li>
+                       
                     </ul>
 
                 </nav>
@@ -112,7 +76,7 @@
                             <li class="menu-title">Navigation</li>
                             
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-target"></i> <span> Kerja Sama Mitra </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Kerja Sama Mitra </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/mitra">Form Kerjasama Mitra</a></li>
                                     <li><a href="/mitradata">Data Kerjasama Mitra</a></li>
@@ -121,21 +85,21 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Rekognisi Dosen </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-head"></i> <span> Rekognisi Dosen </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/rekognisidosen">Form Rekognisi Dosen</a></li>
                                     <li><a href="/rekognisidosendata">Data Rekognisi Dosen</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Google Scholar </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-paper"></i> <span> Google Scholar </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/inputidscholar">Form Id Google Scholar</a></li>
                                     <li><a href="/scholar">Data Google Scholar</a></li>
                                 </ul>
                             </li>
 							 <li>
-                                <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Setting Akun </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fi-cog"></i> <span> Setting Akun </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="/akun">Setting Akun Dosen</a></li>
                                    
@@ -161,7 +125,7 @@
               
 
                 <footer class="footer text-right">
-                    2017 - 2018 © Adminox. - Coderthemes.com
+                    UPN "Veteran" Jawa Timur
                 </footer>
 
            

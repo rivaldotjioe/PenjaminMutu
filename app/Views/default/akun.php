@@ -8,7 +8,6 @@
 	<title>Akun Penjamin Mutu</title>
 	<meta name="robots" content="noindex,nofollow">
 
-	<title>Adminox - Responsive Web App Kit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
 	<meta content="Coderthemes" name="author" />
@@ -86,7 +85,7 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Username</label>
                                         <div class="col-10">
-                                            <input type="text" class="form-control" name="username" placeholder="Password" >
+                                            <input type="text" class="form-control" name="username" placeholder="Username" >
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
@@ -103,7 +102,7 @@
 									<div class="form-group row">
 											<label class="col-2 col-form-label">Konfirmasi Password</label>
 											<div class="col-10">
-												<input type="password" class="form-control" name="confirm_password" id="confirm_password" onkeyup="check()" placeholder="Password" >
+												<input type="password" class="form-control" name="confirm_password" id="confirm_password" onkeyup="check()" placeholder="Konfirmasi Password" >
 												<div class="invalid-feedback">
 												    <span id="pass_message"></span>
 												</div>
@@ -113,7 +112,7 @@
                                         <label class="col-2 col-form-label">User Level</label>
                                         <div class="col-10">
                                             <select class="form-control select2 <?= ($validation->hasError('user_level')) ?  'is-invalid' : ''; ?>" name="user_level" value="<?= old('id_dosen'); ?>">
-                                                <option value="" disabled selected>Pilih NPT Dosen</option>
+                                                <option value="" disabled selected>Pilih Jenis Akun</option>
                                                     <option value="1">Admin</option>
                                                     <option value="2">Dosen</option>
                                             </select>
